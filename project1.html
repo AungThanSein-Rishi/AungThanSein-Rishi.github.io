@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sales CRM Implementation</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    /* Additional mobile optimizations for project detail page */
+    @media (max-width: 768px) {
+      .dashboard-embed {
+        border-radius: 4px !important;
+      }
+      
+      .dashboard-placeholder {
+        padding: 2rem 1rem !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <!-- <span class="logo">Aung Than Sein</span> -->
+      <a href="index.html#projects" class="back-link">&larr; Back to Projects</a>
+    </div>
+  </nav>
+  <main>
+    <section class="section project-detail-section">
+      <h1>Sales CRM Implementation</h1>
+      
+      <!-- Project Description Section -->
+      <div class="project-description">
+        <h3>Project Overview</h3>
+        <p>This comprehensive sales dashboard was developed to transform how our organization tracks, analyzes, and optimizes sales performance. Built using advanced Excel functions and Power BI integration, this solution provides real-time insights into sales metrics, team performance, and revenue forecasting.</p>
+        
+        <h3>Key Features</h3>
+        <ul>
+          <li><strong>Interactive EDA Dashboards:</strong> Rich visual reports in Power BI featuring drill-down filters on sales trends, customer segments, and product performance.</li>
+          <li><strong>Sales Analytics:</strong> SQL-driven breakdowns of total, annual, and monthly sales to uncover revenue patterns and seasonality.</li>
+          <li><strong>Customer Behavior Insights:</strong> Segment exploration showing repeat purchasers and average spend per customer, revealing loyalty and value trends.</li>
+          <li><strong>Product Performance Metrics:</strong> Identification of top-selling products and category-level analysis with insights into quantity sold and revenue contribution.</li>
+          <li><strong>Operational SQL Insights:</strong> Use of SQL scripts for table exploration (e.g., DimCustomer, FactInternetSales), data cleansing, transformation, and aggregations.</li>
+        </ul>
+        
+        <h3>Technical Implementation</h3>
+        <ul>
+          <li><strong>SQL (T‑SQL):</strong> Queries to extract EDA metrics: total sales/profit, annual sales trends, average customer spend, category-level counts, and more.</li>
+          <li><strong>AdventureWorks Database (DW2019):</strong> Restored in SQL Server for analysis; includes DimCustomer, DimDate, DimProducts, DimGeography, FactInternetSales.</li>
+          <li><strong>Power BI:</strong> Data modeling and interactive visual dashboards, including entity diagrams and sales/customer/product pages.</li>
+          <li><strong>Power Query & DAX:</strong> Transform data within Power BI, and apply DAX measures for KPIs like total sales, profits, and customer averages.</li>
+        </ul>
+        
+        <h3>Business Impact</h3>
+        <ul>
+          <li><strong>Enhanced Sales Visibility:</strong> Decision‑ready insights with monthly/yearly sales trends, product performance, and customer segmentation.</li>
+          <li><strong>Optimized Resource Allocation:</strong> Data‑driven identification of top products and high-value customers boosts marketing and inventory strategy.</li>
+          <li><strong>Improved Data Accuracy & Timeliness:</strong> Automated refresh and integration reduce manual processing, ensure up-to-date reporting.</li>
+          <li><strong>Actionable Customer Insights:</strong> Analysis of repeat purchase behavior and average per-customer spend informs loyalty and sales tactics.</li>
+        </ul>
+      </div>
+      
+      <!-- Dashboard Embed Section -->
+      <div class="dashboard-container">
+        <h3>Interactive Sales Dashboard</h3>
+        <!-- Power BI Dashboard -->
+        <div class="dashboard-embed">
+          <iframe title="microsoft_adventure_work_data_analysis" width="100%" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiMDMzMWJmYmEtOWQwZC00NTMyLTljMGEtZDhjZjAwMjg4MDA5IiwidCI6IjM0YmQ4YmVkLTJhYzEtNDFhZS05ZjA4LTRlMGEzZjExNzA2YyJ9" frameborder="0" allowFullScreen="true"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <script>
+    // Handle smooth scrolling to projects section when clicking back button
+    document.addEventListener('DOMContentLoaded', function() {
+      const backLink = document.querySelector('.back-link');
+      
+      if (backLink) {
+        backLink.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          // Navigate to index.html and then scroll to projects section
+          window.location.href = 'index.html#projects';
+        });
+      }
+    });
+  </script>
+</body>
+</html>
