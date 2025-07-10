@@ -99,8 +99,8 @@ body {
 }
 
 .about-section {
-  padding-left: 3rem;
-  padding-right: 3rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
 }
 .btn {
   display: inline-block;
@@ -139,13 +139,12 @@ body {
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=IBM+Plex+Sans:wght@400;700&family=Inter:wght@400;700&family=Roboto:wght@400;700&family=Poppins:wght@700&display=swap');
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(320px, 1fr));
-  gap: 75px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
   justify-content: center;
-  align-items: center;
-  width: max-content;
+  align-items: stretch;
+  width: 100%;
   box-sizing: border-box;
-  place-items: center;
   margin: 0 auto;
   min-height: 100px;
 }
@@ -154,41 +153,46 @@ body {
   background: #fff;
   border-radius: 0 !important;
   box-shadow: 0 2px 8px 0 rgba(44,62,80,.07);
-  padding: 2rem;
-  width: 380px;
+  padding: 5px !important;
+  width: 308px !important;
+  height: 270px !important;
+  margin: 8px !important;
   min-height: 270px;
-  margin-bottom: 1rem;
+  margin: 0 !important;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* margin-bottom: 1rem; */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   box-sizing: border-box;
+  overflow: hidden;
+
   }
-.skill-card {
+/* .skill-card {
   background: #fff;
   border-radius: 0 !important;
   box-shadow: 0 2px 8px 0 rgba(44,62,80,.07);
-  padding: 2rem;
-  width: 380px;
-  min-height: 270px;
-  margin-bottom: 1rem;
+  padding: 5px !important;
+  width: 308px !important;
+  height: 308px !important;
+  margin: 0 !important;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  box-sizing: border-box;
-}
+  
+} */
+
 .skill-card h2, .skill-card h3 {
   color: #3578e3;
   font-size: 1.32rem;
   font-family: 'Montserrat', 'Poppins', 'Segoe UI', Arial, sans-serif;
   font-weight: 700;
-  margin: 0 0 1.1rem 0;
-  text-align: left;
+  margin: 0 auto 1.1rem auto;
+  text-align: center;
   letter-spacing: 0.01em;
 }
 .skill-card ul {
-  padding-left: 1.2rem;
+  padding-left: 2.8rem;
   margin: 0 0 0.5rem 0;
   text-align: left;
   color: #4a5568;
@@ -210,6 +214,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 /* Justify bullet point content in experience section */
@@ -230,7 +235,7 @@ body {
   background: #fff;
   border-radius: 0 !important; /* Remove border radius */
   box-shadow: 0 2px 8px 0 rgba(44,62,80,.07);
-  padding: 1rem 1.1rem 1.1rem 1.1rem;
+  padding: 1rem 3.5rem 1.1rem 3.5rem;
   margin-bottom: 2.2rem;
   min-height: 80px;
   display: flex;
@@ -344,7 +349,8 @@ body {
   min-height: 90px;
   cursor: pointer;
   transition: box-shadow 0.2s, transform 0.2s;
-  text-align: left;
+  text-align: center;
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -411,7 +417,7 @@ body {
   background: #fff;
   border-radius: 0 !important; /* Remove border radius */
   box-shadow: 0 2px 8px 0 rgba(44,62,80,.07);
-  padding: 2rem;
+  padding: 2rem 3.5rem 2rem 3.5rem;
   margin-bottom: 2rem;
   display: flex;
   justify-content: space-between;
@@ -696,13 +702,12 @@ body {
 /* Skills Section Mobile Responsiveness */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(320px, 1fr));
-  gap: 75px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   width: max-content;
   box-sizing: border-box;
-  place-items: center;
   margin: 0 auto;
   min-height: 100px;
 }
@@ -710,24 +715,22 @@ body {
 @media (max-width: 768px) {
   .skills-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 12px;
     width: 100%;
     max-width: 400px;
     place-items: center;
   }
-  
   .skill-card {
     width: 100% !important;
-    max-width: 380px;
-    padding: 1.5rem !important;
+    max-width: 308px;
+    height: auto !important;
+    padding: 5px !important;
     min-height: auto !important;
   }
-  
   .skill-card h2 {
     font-size: 1.2rem !important;
     margin-bottom: 1rem !important;
   }
-  
   .skill-card ul {
     font-size: 0.95rem !important;
   }
@@ -1390,13 +1393,38 @@ body {
 }
 
 /* Achievements Gallery Styles */
-.achievements-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.7rem;
-  justify-items: center;
+
+.achievements-carousel-wrapper {
+  display: flex;
+  align-items: center;
   justify-content: center;
   margin-top: 2rem;
+  width: 100%;
+}
+
+.achievements-carousel {
+  display: flex;
+  gap: 0.7rem;
+  width: auto;
+  min-width: 0;
+  justify-content: center;
+}
+
+.carousel-arrow {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: background 0.2s;
+}
+.carousel-arrow:disabled {
+  background: #bfcbe6;
+  cursor: not-allowed;
 }
 
 .achievement-item {
@@ -1414,6 +1442,7 @@ body {
   align-items: center;
   justify-content: flex-end;
   margin-bottom: 0.5rem;
+  flex: 0 0 260px;
 }
 
 .achievement-item:hover {
@@ -1514,33 +1543,36 @@ body {
 
 #modalCaption {
   margin: 15px 0;
-  color: #fff;
+  color: #0c0b0b;
   font-size: 1.2rem;
   font-weight: 600;
 }
 
 /* Responsive Design for Achievements */
 @media (max-width: 900px) {
-  .achievements-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+  .achievements-carousel {
+    gap: 0.5rem;
+  }
+  .achievement-item {
+    width: 180px;
+    height: 140px;
+    flex: 0 0 180px;
   }
 }
 
-@media (max-width: 600px) {
-  .achievements-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+@media (max-width: 700px) {
+  .achievements-carousel {
+    gap: 0.3rem;
   }
-  
-  .modal-content {
-    width: 95%;
+  .achievement-item {
+    width: 140px;
+    height: 100px;
+    flex: 0 0 140px;
   }
-  
-  .close {
-    top: 10px;
-    right: 20px;
-    font-size: 30px;
+  .carousel-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 1.1rem;
   }
 }
 
@@ -1814,4 +1846,46 @@ body li {
 .contact-info {
   font-size: 0.70em;
   word-break: break-all; /* or keep as normal if you want to avoid breaking */
+}
+
+/* Responsive Modal Fix for Mobile */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.7);
+  z-index: 9999;
+  overflow: auto;
+}
+.modal-content {
+  max-width: 95vw;
+  max-height: 90vh;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 16px rgba(44,62,80,.18);
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal-content img {
+  max-width: 90vw;
+  max-height: 60vh;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+@media (max-width: 700px) {
+  .modal-content {
+    max-width: 98vw;
+    padding: 0.5rem;
+  }
+  .modal-content img {
+    max-width: 96vw;
+    max-height: 40vh;
+  }
 }
