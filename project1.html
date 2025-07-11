@@ -27,17 +27,19 @@
   </nav>
   <main>
     <section class="section project-detail-section">
-      <h1>Sales CRM Implementation</h1>
+      <h1>Sales Performance Analytics for AdventureWorks Using SQL & Power BI</h1>
       
       <!-- Project Description Section -->
       <div class="project-description">
         <h3>Project Overview</h3>
-        <p>This comprehensive sales dashboard was developed to transform how our organization tracks, analyzes, and optimizes sales performance. Built using advanced Excel functions and Power BI integration, this solution provides real-time insights into sales metrics, team performance, and revenue forecasting.</p>
+        <p>This project focuses on the analysis and visualization of the AdventureWorks database, which represents the operations of a fictional bicycle manufacturing company. The database contains comprehensive data on products, sales, customers, and employees.</p>
+        <p>Using SQL for data extraction and transformation, and Microsoft Power BI for visualization, the project delivers actionable insights into the company’s sales performance and operational metrics. Through the integration of advanced DAX functions, SQL queries, and dynamic data modeling, a comprehensive and interactive sales dashboard has been developed. This dashboard enables users to monitor key performance indicators (KPIs), assess team contributions, and forecast revenue trends in real-time.</p>
+        <p>The outcome includes a set of user-friendly reports and dashboards designed to support data-driven decision-making and enhance overall business understanding.</p>
         
         <h3>Key Features</h3>
         <ul>
           <li><strong>Interactive EDA Dashboards:</strong> Rich visual reports in Power BI featuring drill-down filters on sales trends, customer segments, and product performance.</li>
-          <li><strong>Sales Analytics:</strong> SQL-driven breakdowns of total, annual, and monthly sales to uncover revenue patterns and seasonality.</li>
+          <li><strong>Sales Analytics:</strong> DAX-driven breakdowns of total, annual, and monthly sales to uncover revenue patterns and seasonality.</li>
           <li><strong>Customer Behavior Insights:</strong> Segment exploration showing repeat purchasers and average spend per customer, revealing loyalty and value trends.</li>
           <li><strong>Product Performance Metrics:</strong> Identification of top-selling products and category-level analysis with insights into quantity sold and revenue contribution.</li>
           <li><strong>Operational SQL Insights:</strong> Use of SQL scripts for table exploration (e.g., DimCustomer, FactInternetSales), data cleansing, transformation, and aggregations.</li>
@@ -45,10 +47,10 @@
         
         <h3>Technical Implementation</h3>
         <ul>
-          <li><strong>SQL (T‑SQL):</strong> Queries to extract EDA metrics: total sales/profit, annual sales trends, average customer spend, category-level counts, and more.</li>
-          <li><strong>AdventureWorks Database (DW2019):</strong> Restored in SQL Server for analysis; includes DimCustomer, DimDate, DimProducts, DimGeography, FactInternetSales.</li>
-          <li><strong>Power BI:</strong> Data modeling and interactive visual dashboards, including entity diagrams and sales/customer/product pages.</li>
-          <li><strong>Power Query & DAX:</strong> Transform data within Power BI, and apply DAX measures for KPIs like total sales, profits, and customer averages.</li>
+         <li><strong>AdventureWorksDW2022 Database:</strong> Restored in SQL Server for analysis; includes DimCustomer, DimDate, DimProducts, DimGeography, FactInternetSales.</li>
+         <li><strong>SQL (T‑SQL):</strong> Queries are used to extract and clean data from different tables like DimCustomers, DimProducts, FactInternetSales and etc.</li>
+         <li><strong>Power BI:</strong> Data modeling and interactive visual dashboards, including entity diagrams and sales/customer/product pages.</li>
+         <li><strong>DAX Measures:</strong> Transform data within Power BI, and apply DAX measures for KPIs like total sales, total order, profit & profit margin , distinct product and customer count.</li>
         </ul>
         
         <h3>Business Impact</h3>
