@@ -18,7 +18,6 @@
     }
   </style>
 
-
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -37,66 +36,47 @@
   </nav>
   <main>
     <section class="section project-detail-section">
-      <h1>Strategic Coffee Sales Report with Visualization</h1>
+      <h1>Sales Performance Analytics for AdventureWorks Using SQL & Power BI</h1>
       
       <!-- Project Description Section -->
       <div class="project-description">
         <h3>Project Overview</h3>
-        <p>
-          This interactive Coffee Sales Dashboard offers a real-time, data-driven overview of coffee sales performance across regions, timeframes, customer segments, and product types. Developed in Excel using advanced charting techniques and structured datasets, it enables sales leaders to monitor trends, evaluate customer loyalty, and optimize product strategies with clarity and precision.
-        </p>
-         <p>
-          This Excel dashboard provides a user-friendly way to analyze coffee sales data. Its interactive design allows users to filter the data by time period. These filters enable users to drill down into the data and explore specific trends and customer preferences.
-        </p>
-        <p>
-          This project showcases end-to-end data analysis using MS Excel, covering data cleaning, pivot tables, and visual dashboards. It demonstrates how Excel can be effectively used for business insights and decision-making.
-        </p>
+        <p>This project focuses on the analysis and visualization of the AdventureWorks database, which represents the operations of a fictional bicycle manufacturing company. The database contains comprehensive data on products, sales, customers, and employees.</p>
+        <p>Using SQL for data extraction and transformation, and Microsoft Power BI for visualization, the project delivers actionable insights into the company’s sales performance and operational metrics. Through the integration of advanced DAX functions, SQL queries, and dynamic data modeling, a comprehensive and interactive sales dashboard has been developed. This dashboard enables users to monitor key performance indicators (KPIs), assess team contributions, and forecast revenue trends in real-time.</p>
+        <p>The outcome includes a set of user-friendly reports and dashboards designed to support data-driven decision-making and enhance overall business understanding.</p>
         
         <h3>Key Features</h3>
-        <h3>📈Sales & Profit Trends</h3>
         <ul>
-          <li><strong>Monthly Sales & Profit Tracking:</strong> Column charts display monthly sales and profits over time, with a 3-period moving average to highlight seasonal trends and performance stability.</li>
-          <li><strong>Year-over-Year Performance:</strong> A comparative annual chart illustrates shifts in sales and profit shares from 2019 to 2022, showing peak performance in 2021 (31%).</li>   
-        </ul>
-        
-        <h3>🌍 Regional Sales Distribution</h3>
-        <ul>
-          <li><strong>Sales by Country:</strong> Regional insights show the U.S. as the dominant market, contributing 79% of total sales and profit, followed by Ireland and the UK.</li>
-        </ul>
-
-        <h3>🧑‍🤝‍🧑 Customer Insights</h3>
-        <ul>       
-          <li><strong>Top 5 Customers by Sales:</strong> A horizontal bar chart highlights high-value customers, led by Allis Wilmore ($317) and Brenn Dundredge ($307) over all combine period.</li>
-          <li><strong>Loyalty Card Impact:</strong> Loyalty members account for 46.35% of sales and 47.90% of total customers, reflecting positive ROI on loyalty engagement.</li>       
-        </ul>
-          
-        <h3>☕Product Analysis</h3>
-        <ul>
-        <li><strong>Qty Sold by Coffee Size:</strong> A doughnut chart splits quantities sold across four package sizes (0.2kg to 2.5kg), with 0.5kg bags leading at 26%.</li>
-        <li><strong>Coffee Type Breakdown:</strong> Stacked bars compare Arabica, Excelsa, Liberica, and Robusta by roast level (Dark, Light, Medium), showing Arabica leads in total quantity, with a strong preference for Dark roast (38%).</li>
+          <li><strong>Interactive EDA Dashboards:</strong> Rich visual reports in Power BI featuring drill-down filters on sales trends, customer segments, and product performance.</li>
+          <li><strong>Sales Analytics:</strong> DAX-driven breakdowns of total, annual, and monthly sales to uncover revenue patterns and seasonality.</li>
+          <li><strong>Customer Behavior Insights:</strong> Segment exploration showing repeat purchasers and average spend per customer, revealing loyalty and value trends.</li>
+          <li><strong>Product Performance Metrics:</strong> Identification of top-selling products and category-level analysis with insights into quantity sold and revenue contribution.</li>
+          <li><strong>Operational SQL Insights:</strong> Use of SQL scripts for table exploration (e.g., DimCustomer, FactInternetSales), data cleansing, transformation, and aggregations.</li>
         </ul>
         
         <h3>Technical Implementation</h3>
         <ul>
-          <li><strong>Excel Dashboarding:</strong> Utilizes dynamic visuals (column, bar, line, doughnut, and stacked bar charts) with slicers for year and month filters.</li>
-          <li><strong>Structured Data Tables:</strong> Integrated from sheets like orders_details, products_details, and custs_details, cleaned and summarized in analytical views.</li>
-          <li><strong>Formula & Calculations:</strong> Excel formulas like XLOOKUP, INDEX & MATCH, and nested IF are used to pull customer and product data. Sales are calculated by multiplying quantity and unit price.</li>
-          </ul>
+         <li><strong>AdventureWorksDW2022 Database:</strong> Restored in SQL Server for analysis; includes DimCustomer, DimDate, DimProducts, DimGeography, FactInternetSales.</li>
+         <li><strong>SQL (T‑SQL):</strong> Queries are used to extract and clean data from different tables like DimCustomers, DimProducts, FactInternetSales and etc.</li>
+         <li><strong>Power BI:</strong> Data modeling and interactive visual dashboards, including entity diagrams and sales/customer/product pages.</li>
+         <li><strong>DAX Measures:</strong> Transform data within Power BI, and apply DAX measures for KPIs like total sales, total order, profit & profit margin , distinct product and customer count.</li>
+        </ul>
         
         <h3>Business Impact</h3>
         <ul>
-          <li><strong>Performance Monitoring:</strong> Enables monthly and yearly tracking of both revenue and profit, helping identify high and low-performing periods for promotional planning.</li>
-          <li><strong>Customer-Centric Strategy:</strong> Insight into top spenders and loyalty card participation guides retention and upselling efforts.</li>
-          <li><strong>Market Focus:</strong> Data highlights the dominance of the U.S. market, allowing for strategic expansion or tailored campaigns in underperforming regions.</li>
+          <li><strong>Enhanced Sales Visibility:</strong> Decision‑ready insights with monthly/yearly sales trends, product performance, and customer segmentation.</li>
+          <li><strong>Optimized Resource Allocation:</strong> Data‑driven identification of top products and high-value customers boosts marketing and inventory strategy.</li>
+          <li><strong>Improved Data Accuracy & Timeliness:</strong> Automated refresh and integration reduce manual processing, ensure up-to-date reporting.</li>
+          <li><strong>Actionable Customer Insights:</strong> Analysis of repeat purchase behavior and average per-customer spend informs loyalty and sales tactics.</li>
         </ul>
       </div>
       
       <!-- Dashboard Embed Section -->
       <div class="dashboard-container">
-        <h3>Interactive Coffee Sales Dashboard</h3>
+        <h3>Interactive Sales Dashboard</h3>
         <!-- Power BI Dashboard -->
         <div class="dashboard-embed">
-            <iframe width="700" height="650" frameborder="0" scrolling="no" src="https://onedrive.live.com/embed?resid=D6F608ACFBA36CCA%21436&authkey=%21AKyk8ykL2AP1uGQ&em=2&ActiveCell='Dashboard'!A1&Item='Dashboard'!A1%3AT32&wdHideGridlines=True&wdInConfigurator=True&wdInConfigurator=True"></iframe>
+          <iframe title="microsoft_adventure_work_data_analysis" width="100%" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiMDMzMWJmYmEtOWQwZC00NTMyLTljMGEtZDhjZjAwMjg4MDA5IiwidCI6IjM0YmQ4YmVkLTJhYzEtNDFhZS05ZjA4LTRlMGEzZjExNzA2YyJ9" frameborder="0" allowFullScreen="true"></iframe>
         </div>
       </div>
     </section>

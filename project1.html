@@ -36,48 +36,58 @@
   </nav>
   <main>
     <section class="section project-detail-section">
-      <h1>Sales Performance Analytics for AdventureWorks Using SQL & Power BI</h1>
-      
+      <h1>Amul FMCG Sales Intelligence & Store Performance Power BI Analytics</h1>
+           
       <!-- Project Description Section -->
       <div class="project-description">
         <h3>Project Overview</h3>
-        <p>This project focuses on the analysis and visualization of the AdventureWorks database, which represents the operations of a fictional bicycle manufacturing company. The database contains comprehensive data on products, sales, customers, and employees.</p>
-        <p>Using SQL for data extraction and transformation, and Microsoft Power BI for visualization, the project delivers actionable insights into the company’s sales performance and operational metrics. Through the integration of advanced DAX functions, SQL queries, and dynamic data modeling, a comprehensive and interactive sales dashboard has been developed. This dashboard enables users to monitor key performance indicators (KPIs), assess team contributions, and forecast revenue trends in real-time.</p>
-        <p>The outcome includes a set of user-friendly reports and dashboards designed to support data-driven decision-making and enhance overall business understanding.</p>
+        <p>
+          This project delivers an interactive, end-to-end sales performance solution designed for a retail/FMCG business model. Built entirely in Power BI, it provides dynamic visibility into sales trends, customer behavior, and channel-wise contribution — without using SQL queries. Data modeling, DAX measures, and calculated columns drive key business metrics including store segmentation, new vs. returning customer behavior, and revenue tracking.
+        </p>
+         <p>
+          The dashboard empowers decision-makers to monitor performance by territory, channel, product, and customer type, supporting both executive-level overviews and operational insights.
+        </p>
+        
         
         <h3>Key Features</h3>
+     
         <ul>
-          <li><strong>Interactive EDA Dashboards:</strong> Rich visual reports in Power BI featuring drill-down filters on sales trends, customer segments, and product performance.</li>
-          <li><strong>Sales Analytics:</strong> DAX-driven breakdowns of total, annual, and monthly sales to uncover revenue patterns and seasonality.</li>
-          <li><strong>Customer Behavior Insights:</strong> Segment exploration showing repeat purchasers and average spend per customer, revealing loyalty and value trends.</li>
-          <li><strong>Product Performance Metrics:</strong> Identification of top-selling products and category-level analysis with insights into quantity sold and revenue contribution.</li>
-          <li><strong>Operational SQL Insights:</strong> Use of SQL scripts for table exploration (e.g., DimCustomer, FactInternetSales), data cleansing, transformation, and aggregations.</li>
+        <li><strong>Interactive Executive Dashboards:</strong> Professionally designed layouts with slicers, drill-throughs, KPI cards, and YOY comparisons for performance visibility.</li>
         </ul>
-        
+        <ul>
+          <li><strong>Store & Territory Insights:</strong> Segmentation of active, new, returning, and dropped stores with trend visualizations across months and territories.</li>
+          <li><strong>Sales Channel Performance:</strong> Side-by-side analysis of MT, RT, WS, RS, and other channels, including rep-level contribution and YOY growth trends.</li>
+          <li><strong>Product Analysis:</strong> Category-wise sales contribution using column, scatter plots, and average selling price vs. order value comparisons.</li>   
+          <li><strong>Store Segment Insights:</strong> Tier-based store classification (Platinum, Gold, Silver, Bronze) by purchase volume for resource prioritization.</li>   
+          <li><strong>KPI Tracking:</strong> Metrics include Gross Sales, Net Sales, Discounts, Active Stores, New vs. Returning Sales, MoM/YoY Growth, and Cumulative Sales.</li>   
+         </ul>
+
         <h3>Technical Implementation</h3>
-        <ul>
-         <li><strong>AdventureWorksDW2022 Database:</strong> Restored in SQL Server for analysis; includes DimCustomer, DimDate, DimProducts, DimGeography, FactInternetSales.</li>
-         <li><strong>SQL (T‑SQL):</strong> Queries are used to extract and clean data from different tables like DimCustomers, DimProducts, FactInternetSales and etc.</li>
-         <li><strong>Power BI:</strong> Data modeling and interactive visual dashboards, including entity diagrams and sales/customer/product pages.</li>
-         <li><strong>DAX Measures:</strong> Transform data within Power BI, and apply DAX measures for KPIs like total sales, total order, profit & profit margin , distinct product and customer count.</li>
-        </ul>
+        <ul>      
+          <li><strong>Power BI:</strong> Entire project was built within Power BI Desktop using imported data tables. All transformations and logic are handled through calculated columns and DAX measures.</li>
+          <li><strong>Data Modeling:</strong> Star schema structure with a central fact table (FactSalesAmul) linked to dimensions like customer, product, territory, date, and channel.</li>
+          <li><strong>Advanced DAX Measures:</strong> Custom logic to calculate net/gross sales, % of returning/new/drop stores, monthly activity, segment ranking, and growth indicators.</li>
+          <li><strong>Visual Design:</strong> Clean, consistent themes with intuitive slicers, bookmarks, navigation icons, and icon-based callouts to enhance usability.</li>
+          </ul>
         
         <h3>Business Impact</h3>
         <ul>
-          <li><strong>Enhanced Sales Visibility:</strong> Decision‑ready insights with monthly/yearly sales trends, product performance, and customer segmentation.</li>
-          <li><strong>Optimized Resource Allocation:</strong> Data‑driven identification of top products and high-value customers boosts marketing and inventory strategy.</li>
-          <li><strong>Improved Data Accuracy & Timeliness:</strong> Automated refresh and integration reduce manual processing, ensure up-to-date reporting.</li>
-          <li><strong>Actionable Customer Insights:</strong> Analysis of repeat purchase behavior and average per-customer spend informs loyalty and sales tactics.</li>
+          <li><strong>Executive-Level Insights:</strong> Helps leadership quickly identify sales performance by region, brand, and channel for strategic reviews.</li>
+          <li><strong>Customer Lifecycle Tracking:</strong> Monitors new, returning, and churned store behavior, aiding in retention and reactivation planning.</li>
+          <li><strong>Territory Optimization:</strong> Equips sales managers with territory-wise KPIs and store trends to improve field efficiency.</li>
+          <li><strong>Channel Strategy Planning:</strong> Highlights high-growth and underperforming sales channels for targeted marketing or sales effort allocation.</li>
+          <li><strong>Performance-Based Incentives:</strong> Salesperson-level analysis supports fair and data-driven incentive systems.</li>
         </ul>
       </div>
       
       <!-- Dashboard Embed Section -->
       <div class="dashboard-container">
-        <h3>Interactive Sales Dashboard</h3>
+        <h3>Interactive Sales Performance Analytics Dashboard</h3>
+        
         <!-- Power BI Dashboard -->
         <div class="dashboard-embed">
-          <iframe title="microsoft_adventure_work_data_analysis" width="100%" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiMDMzMWJmYmEtOWQwZC00NTMyLTljMGEtZDhjZjAwMjg4MDA5IiwidCI6IjM0YmQ4YmVkLTJhYzEtNDFhZS05ZjA4LTRlMGEzZjExNzA2YyJ9" frameborder="0" allowFullScreen="true"></iframe>
-        </div>
+          <iframe title="Amul Sales Reviews" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=c9e2ff5f-b35d-498b-a1b6-437b9b9c7476&autoAuth=true&ctid=34bd8bed-2ac1-41ae-9f08-4e0a3f11706c" frameborder="0" allowFullScreen="true"></iframe>
+      </div>
       </div>
     </section>
   </main>
