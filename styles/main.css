@@ -1,0 +1,226 @@
+/* Main CSS File - Portfolio Application */
+
+/* Import base styles first */
+@import url('./base/variables.css');
+@import url('./base/reset.css');
+
+/* Import component styles */
+@import url('./components/navigation.css');
+@import url('./components/hero.css');
+@import url('./components/sections.css');
+@import url('./components/projects.css');
+@import url('./components/achievements.css');
+@import url('./components/contact.css');
+@import url('./components/languages.css');
+
+/* Import utilities last */
+@import url('./components/utilities.css');
+
+/* Global styles that apply to the entire application */
+body {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure all images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Smooth scrolling for better UX */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure proper box-sizing for all elements */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Prevent horizontal scroll on mobile */
+body {
+  overflow-x: hidden;
+}
+
+/* Improve focus states for accessibility */
+a:focus,
+button:focus,
+.nav-toggle:focus {
+  outline: 2px solid var(--primary-500);
+  outline-offset: 2px;
+}
+
+/* Motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * { 
+    animation: none !important; 
+    transition: none !important; 
+  }
+}
+
+
+
+/* Ensure proper spacing and layout on mobile */
+@media (max-width: 768px) {
+  
+  /* Improve touch targets */
+  a, button, .project-card, .achievement-item {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  /* Improve readability */
+  p, li {
+    line-height: 1.6;
+  }
+}
+
+/* Landscape mobile optimization */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero-content h1 {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .section {
+    padding: var(--spacing-6) var(--spacing-4);
+  }
+  
+  .profile-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+    border: 3px solid var(--bg-secondary);
+    box-shadow: var(--shadow-sm);
+  }
+}
+
+/* General Typography Mobile Optimization */
+@media (max-width: 768px) {
+  body {
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: var(--font-size-xs);
+  }
+}
+
+/* Justify all body paragraph content */
+body p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Justify all list points */
+body li {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Set the color of text in Hero and About Me section to a light dark shade */
+.hero-content p,
+.about-section p {
+  color: var(--gray-500);
+  font-size: var(--font-size-lg);
+}
+
+/* Contact info styling */
+.contact-info {
+  font-size: 0.70em;
+  word-break: break-all;
+}
+
+/* Ensure proper spacing and layout on mobile */
+@media (max-width: 768px) {
+  .section + .section {
+    margin-top: 0;
+  }
+  
+  /* Improve touch targets */
+  a, button, .project-card, .achievement-item {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Improve readability */
+  p, li {
+    line-height: 1.6;
+  }
+}
+
+/* Landscape mobile optimization */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero-content h1 {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .section {
+    padding: var(--spacing-6) var(--spacing-4);
+  }
+  
+  .profile-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+    border: 3px solid var(--bg-secondary);
+    box-shadow: var(--shadow-sm);
+  }
+}
+
+/* General Typography Mobile Optimization */
+@media (max-width: 768px) {
+  body {
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: var(--font-size-xs);
+  }
+}
+
+/* Justify all body paragraph content */
+body p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Justify all list points */
+body li {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Set the color of text in Hero and About Me section to a light dark shade */
+.hero-content p,
+.about-section p {
+  color: var(--gray-500);
+  font-size: var(--font-size-lg);
+}
+
+/* Contact info styling */
+.contact-info {
+  font-size: 0.70em;
+  word-break: break-all;
+}

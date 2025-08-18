@@ -1,0 +1,377 @@
+/* Achievements Horizontal Sliding Carousel */
+.achievements-carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-4);
+  margin: var(--spacing-8) 0;
+  position: relative;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 var(--spacing-4);
+}
+
+.achievements-carousel-wrapper {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  border-radius: var(--radius-lg);
+  max-width: 100%;
+}
+
+.achievements-carousel {
+  display: flex;
+  gap: var(--spacing-4);
+  transition: transform 0.8s ease-in-out;
+  align-items: center;
+}
+
+.achievement-item {
+  position: relative;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  width: 280px;
+  height: 200px;
+  flex: 0 0 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+}
+
+.achievement-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.achievement-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.achievement-item:hover img {
+  transform: scale(1.05);
+}
+
+.achievement-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  color: white;
+  padding: var(--spacing-6) var(--spacing-4) var(--spacing-4) var(--spacing-4);
+  transform: translateY(100%);
+  transition: transform var(--transition-normal);
+}
+
+.achievement-item:hover .achievement-overlay {
+  transform: translateY(0);
+}
+
+.achievement-overlay h3 {
+  margin: 0 0 var(--spacing-2) 0;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+}
+
+.achievement-overlay p {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  opacity: 0.8;
+}
+
+/* Navigation Arrows */
+.carousel-nav {
+  background: var(--primary-600);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: var(--font-size-2xl);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: var(--shadow-md);
+}
+
+.carousel-nav:hover {
+  background: var(--primary-700);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-lg);
+}
+
+.carousel-nav:disabled {
+  background: var(--gray-300);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.carousel-nav.prev {
+  order: -1;
+}
+
+.carousel-nav.next {
+  order: 1;
+}
+
+/* Ensure achievements arrows sit left & right (avoid wrapping) */
+.achievements-carousel-container .carousel-nav {
+  flex-shrink: 0;
+}
+
+/* Overlay arrow positioning on narrower screens so right arrow doesn't drop left */
+@media (max-width: 1200px) {
+  .achievements-carousel-container {
+    padding-left: 64px; /* space for left arrow */
+    padding-right: 64px; /* space for right arrow */
+  }
+  .achievements-carousel-container .carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .achievements-carousel-container .carousel-nav.prev { left: 16px; }
+  .achievements-carousel-container .carousel-nav.next { right: 16px; }
+}
+
+.mobile-arrow {
+  display: none;
+}
+
+.desktop-arrow {
+  display: inline;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999; /* ensure above carousels */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
+  animation: fadeIn var(--transition-normal);
+  pointer-events: auto;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  position: relative;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 800px;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  pointer-events: auto;
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: var(--radius-lg);
+}
+
+ .close {
+  position: absolute;
+  top: 12px; /* moved slightly inward */
+  right: 12px; /* moved from 35px to sit over image corner */
+  color: #ff3636; /* red X */
+  font-size: 32px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: var(--z-modal);
+  transition: all var(--transition-normal);
+  background: rgba(255,255,255,0.15); /* subtle bg */
+  backdrop-filter: blur(4px);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255,255,255,0.25);
+}
+
+.close:hover {
+  background: rgba(255,255,255,0.28);
+  color: #ff1212;
+  transform: scale(1.05);
+}
+
+#modalCaption {
+  margin: var(--spacing-4) 0;
+  color: var(--text-primary);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Mobile Responsiveness for Achievements */
+@media (max-width: 768px) {
+  .achievements-carousel-container {
+    gap: var(--spacing-2);
+  padding: 0 var(--spacing-2); /* base padding reset; absolute arrows already spaced */
+  }
+  
+  .achievement-item {
+    width: 200px;
+    height: 150px;
+    flex: 0 0 200px;
+  }
+  
+  .achievement-overlay h3 {
+    font-size: var(--font-size-base);
+  }
+  
+  .achievement-overlay p {
+    font-size: var(--font-size-xs);
+  }
+  
+  .carousel-nav {
+    width: 40px;
+    height: 40px;
+    font-size: var(--font-size-xl);
+  }
+  /* Tighter arrow positioning for small tablets/large phones */
+  .achievements-carousel-container .carousel-nav.prev { left: 8px; }
+  .achievements-carousel-container .carousel-nav.next { right: 8px; }
+  
+  .desktop-arrow {
+    display: none;
+  }
+  
+  .mobile-arrow {
+    display: inline;
+  }
+}
+
+@media (max-width: 480px) {
+  .achievements-carousel-container {
+    gap: var(--spacing-1);
+    padding: 0 var(--spacing-1);
+  }
+  
+  .achievement-item {
+    width: 160px;
+    height: 120px;
+    flex: 0 0 160px;
+  }
+  
+  .achievements-carousel {
+    gap: var(--spacing-2);
+  }
+  
+  .achievement-overlay {
+    padding: var(--spacing-3) var(--spacing-2) var(--spacing-2) var(--spacing-2);
+  }
+  
+  .achievement-overlay h3 {
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-1);
+  }
+  
+  .achievement-overlay p {
+    font-size: var(--font-size-xs);
+  }
+  
+  .carousel-nav {
+    width: 36px;
+    height: 36px;
+    font-size: var(--font-size-lg);
+  }
+  .achievements-carousel-container .carousel-nav.prev { left: 4px; }
+  .achievements-carousel-container .carousel-nav.next { right: 4px; }
+}
+
+@media (max-width: 360px) {
+  .achievement-item {
+    width: 140px;
+    height: 100px;
+    flex: 0 0 140px;
+  }
+  
+  .achievements-carousel {
+    gap: var(--spacing-1);
+  }
+  
+  .carousel-nav {
+    width: 32px;
+    height: 32px;
+    font-size: var(--font-size-base);
+  }
+  .achievements-carousel-container .carousel-nav.prev { left: 2px; }
+  .achievements-carousel-container .carousel-nav.next { right: 2px; }
+}
+
+/* Responsive Modal */
+@media (max-width: 700px) {
+  .modal-content {
+    max-width: 98vw;
+    padding: var(--spacing-2);
+  }
+  
+  .modal-content img {
+    max-width: 96vw;
+    max-height: 40vh;
+  }
+  
+  .close {
+    top: 10px;
+    right: 20px;
+    font-size: 32px;
+  }
+  
+  #modalCaption {
+    font-size: var(--font-size-base);
+    margin: var(--spacing-2) 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    max-width: 95vw;
+    padding: var(--spacing-1);
+  }
+  
+  .modal-content img {
+    max-width: 90vw;
+    max-height: 35vh;
+  }
+  
+  .close {
+    top: 8px;
+    right: 15px;
+    font-size: 28px;
+  }
+  
+  #modalCaption {
+    font-size: var(--font-size-sm);
+    margin: var(--spacing-1) 0;
+  }
+}

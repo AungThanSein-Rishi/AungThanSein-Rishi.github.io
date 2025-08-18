@@ -1,111 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sales CRM Implementation</title>
-  <link rel="stylesheet" href="css/style.css"/>
-  <style>
-    /* Additional mobile optimizations for project detail page */
-    @media (max-width: 768px) {
-      .dashboard-embed {
-        border-radius: 4px !important;
-      }
-      
-      .dashboard-placeholder {
-        padding: 2rem 1rem !important;
-      }
-    }
-  </style>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Sales CRM Implementation</title>
+            <link rel="stylesheet" href="styles/main.css"/>
+        <style>
+                html, body {
+                    height: 100%;
+                    min-height: 100%;
+                    overflow-y: auto;
+                }
+                main {
+                    min-height: 100vh;
+                    overflow: visible;
+                }
+                .section.project-detail-section {
+                    padding-bottom: 2rem;
+                }
+                /* Additional mobile optimizations for project detail page */
+                @media (max-width: 768px) {
+                    .dashboard-embed {
+                        border-radius: 4px !important;
+                    }
+                    .dashboard-placeholder {
+                        padding: 2rem 1rem !important;
+                    }
+                    .section.project-detail-section {
+                        padding-bottom: 3rem;
+                    }
+                }
+        </style>
 
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-V6R4C4RV78');
+        </script>
 
-    gtag('config', 'G-V6R4C4RV78');
-  </script>
-
-</head>
-<body>
-  <nav class="navbar">
-    <div class="nav-container">
-      <!-- <span class="logo">Aung Than Sein</span> -->
-      <a href="index.html#projects" class="back-link">&larr; Back to Projects</a>
-    </div>
-  </nav>
-  <main>
-    <section class="section project-detail-section">
-      <h1>Amul FMCG Sales Intelligence & Store Performance Power BI Analytics</h1>
-           
-      <!-- Project Description Section -->
-      <div class="project-description">
-        <h3>Project Overview</h3>
-        <p>
-          This project delivers an interactive, end-to-end sales performance solution designed for a retail/FMCG business model. Built entirely in Power BI, it provides dynamic visibility into sales trends, customer behavior, and channel-wise contribution — without using SQL queries. Data modeling, DAX measures, and calculated columns drive key business metrics including store segmentation, new vs. returning customer behavior, and revenue tracking.
-        </p>
-         <p>
-          The dashboard empowers decision-makers to monitor performance by territory, channel, product, and customer type, supporting both executive-level overviews and operational insights.
-        </p>
-        
-        
-        <h3>Key Features</h3>
-     
-        <ul>
-        <li><strong>Interactive Executive Dashboards:</strong> Professionally designed layouts with slicers, drill-throughs, KPI cards, and YOY comparisons for performance visibility.</li>
-        </ul>
-        <ul>
-          <li><strong>Store & Territory Insights:</strong> Segmentation of active, new, returning, and dropped stores with trend visualizations across months and territories.</li>
-          <li><strong>Sales Channel Performance:</strong> Side-by-side analysis of MT, RT, WS, RS, and other channels, including rep-level contribution and YOY growth trends.</li>
-          <li><strong>Product Analysis:</strong> Category-wise sales contribution using column, scatter plots, and average selling price vs. order value comparisons.</li>   
-          <li><strong>Store Segment Insights:</strong> Tier-based store classification (Platinum, Gold, Silver, Bronze) by purchase volume for resource prioritization.</li>   
-          <li><strong>KPI Tracking:</strong> Metrics include Gross Sales, Net Sales, Discounts, Active Stores, New vs. Returning Sales, MoM/YoY Growth, and Cumulative Sales.</li>   
-         </ul>
-
-        <h3>Technical Implementation</h3>
-        <ul>      
-          <li><strong>Power BI:</strong> Entire project was built within Power BI Desktop using imported data tables. All transformations and logic are handled through calculated columns and DAX measures.</li>
-          <li><strong>Data Modeling:</strong> Star schema structure with a central fact table (FactSalesAmul) linked to dimensions like customer, product, territory, date, and channel.</li>
-          <li><strong>Advanced DAX Measures:</strong> Custom logic to calculate net/gross sales, % of returning/new/drop stores, monthly activity, segment ranking, and growth indicators.</li>
-          <li><strong>Visual Design:</strong> Clean, consistent themes with intuitive slicers, bookmarks, navigation icons, and icon-based callouts to enhance usability.</li>
-          </ul>
-        
-        <h3>Business Impact</h3>
-        <ul>
-          <li><strong>Executive-Level Insights:</strong> Helps leadership quickly identify sales performance by region, brand, and channel for strategic reviews.</li>
-          <li><strong>Customer Lifecycle Tracking:</strong> Monitors new, returning, and churned store behavior, aiding in retention and reactivation planning.</li>
-          <li><strong>Territory Optimization:</strong> Equips sales managers with territory-wise KPIs and store trends to improve field efficiency.</li>
-          <li><strong>Channel Strategy Planning:</strong> Highlights high-growth and underperforming sales channels for targeted marketing or sales effort allocation.</li>
-          <li><strong>Performance-Based Incentives:</strong> Salesperson-level analysis supports fair and data-driven incentive systems.</li>
-        </ul>
-      </div>
-      
-      <!-- Dashboard Embed Section -->
-      <div class="dashboard-container">
-        <h3>Interactive Sales Performance Analytics Dashboard</h3>
-        
-        <!-- Power BI Dashboard -->
-        <div class="dashboard-embed">
-          <iframe title="Amul Sales Reviews" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiODQwMDBjYzgtMzg3OS00MGZiLWFjOTktMjVlMDVlNDBiNmRjIiwidCI6IjM0YmQ4YmVkLTJhYzEtNDFhZS05ZjA4LTRlMGEzZjExNzA2YyJ9" frameborder="0" allowFullScreen="true"></iframe>
-      </div>
-      </div>
-    </section>
-  </main>
-  
-  <script>
-    // Handle smooth scrolling to projects section when clicking back button
-    document.addEventListener('DOMContentLoaded', function() {
-      const backLink = document.querySelector('.back-link');
-      
-      if (backLink) {
-        backLink.addEventListener('click', function(e) {
-          e.preventDefault();
-          
-          // Navigate to index.html and then scroll to projects section
-          window.location.href = 'index.html#projects';
-        });
-      }
-    });
-  </script>
-</body>
-</html>
+        <meta name="description" content="Power BI Sales Intelligence dashboard for FMCG with KPI tracking and store performance analytics">
+        <meta property="og:image" content="image/project_img/Amul FMCG Sales Intelligence & Store Performance.png">
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- <span class="logo">Aung Than Sein</span> -->
+                <a href="index.html#projects" class="back-link" style="margin-bottom:2.5rem;display:inline-block">&larr; Back to Projects</a>
+            </div>
+        </nav>
+        <main>
+            <section class="section project-detail-section">
+                <h1 style="margin-top:2.5rem;">Amul FMCG Sales Intelligence & Store Performance Power BI Analytics</h1>
+                <!-- Project Description Section -->
+                <div class="project-description">
+                    <h3>Project Overview</h3>
+                    <p>
+                        This project delivers an interactive, end-to-end sales performance solution designed for a retail/FMCG business model. Built entirely in Power BI, it provides dynamic visibility into sales trends, customer behavior, and channel-wise contribution — without using SQL queries. Data modeling, DAX measures, and calculated columns drive key business metrics including store segmentation, new vs. returning customer behavior, and revenue tracking.
+                    </p>
+                     <p>
+                        The dashboard empowers decision-makers to monitor performance by territory, channel, product, and customer type, supporting both executive-level overviews and operational insights.
+                    </p>
+                    <h3>Key Features</h3>
+                    <ul>
+                    <li><strong>Interactive Executive Dashboards:</strong> Professionally designed layouts with slicers, drill-throughs, KPI cards, and YOY comparisons for performance visibility.</li>
+                    </ul>
+                    <ul>
+                        <li><strong>Store & Territory Insights:</strong> Segmentation of active, new, returning, and dropped stores with trend visualizations across months and territories.</li>
+                        <li><strong>Sales Channel Performance:</strong> Side-by-side analysis of MT, RT, WS, RS, and other channels, including rep-level contribution and YOY growth trends.</li>
+                        <li><strong>Product Analysis:</strong> Category-wise sales contribution using column, scatter plots, and average selling price vs. order value comparisons.</li>   
+                        <li><strong>Store Segment Insights:</strong> Tier-based store classification (Platinum, Gold, Silver, Bronze) by purchase volume for resource prioritization.</li>   
+                        <li><strong>KPI Tracking:</strong> Metrics include Gross Sales, Net Sales, Discounts, Active Stores, New vs. Returning Sales, MoM/YoY Growth, and Cumulative Sales.</li>   
+                     </ul>
+                    <h3>Technical Implementation</h3>
+                    <ul>      
+                        <li><strong>Power BI:</strong> Entire project was built within Power BI Desktop using imported data tables. All transformations and logic are handled through calculated columns and DAX measures.</li>
+                        <li><strong>Data Modeling:</strong> Star schema structure with a central fact table (FactSalesAmul) linked to dimensions like customer, product, territory, date, and channel.</li>
+                        <li><strong>Advanced DAX Measures:</strong> Custom logic to calculate net/gross sales, % of returning/new/drop stores, monthly activity, segment ranking, and growth indicators.</li>
+                        <li><strong>Visual Design:</strong> Clean, consistent themes with intuitive slicers, bookmarks, navigation icons, and icon-based callouts to enhance usability.</li>
+                        </ul>
+                    <h3>Business Impact</h3>
+                    <ul>
+                        <li><strong>Executive-Level Insights:</strong> Helps leadership quickly identify sales performance by region, brand, and channel for strategic reviews.</li>
+                        <li><strong>Customer Lifecycle Tracking:</strong> Monitors new, returning, and churned store behavior, aiding in retention and reactivation planning.</li>
+                        <li><strong>Territory Optimization:</strong> Equips sales managers with territory-wise KPIs and store trends to improve field efficiency.</li>
+                        <li><strong>Channel Strategy Planning:</strong> Highlights high-growth and underperforming sales channels for targeted marketing or sales effort allocation.</li>
+                        <li><strong>Performance-Based Incentives:</strong> Salesperson-level analysis supports fair and data-driven incentive systems.</li>
+                    </ul>
+                </div>
+                <!-- Dashboard Embed Section -->
+                <div class="dashboard-container">
+                    <h3>Interactive Sales Performance Analytics Dashboard</h3>
+                    <!-- Power BI Dashboard -->
+                    <div class="dashboard-embed">
+                        <iframe title="Amul Sales Reviews" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiODQwMDBjYzgtMzg3OS00MGZiLWFjOTktMjVlMDVlNDBiNmRjIiwidCI6IjM0YmQ4YmVkLTJhYzEtNDFhZS05ZjA4LTRlMGEzZjExNzA2YyJ9" frameborder="0" allowFullScreen="true"></iframe>
+                </div>
+                </div>
+            </section>
+        </main>
+        <script>
+            // Handle smooth scrolling to projects section when clicking back button
+            document.addEventListener('DOMContentLoaded', function() {
+                const backLink = document.querySelector('.back-link');
+                if (backLink) {
+                    backLink.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        // Navigate to index.html with hash, browser will handle the scroll
+                        window.location.href = 'index.html#projects';
+                    });
+                }
+            });
+        </script>
+    </body>
+    </html>

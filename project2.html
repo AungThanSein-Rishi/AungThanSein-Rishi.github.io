@@ -1,101 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sales CRM Implementation</title>
-  <link rel="stylesheet" href="css/style.css"/>
-  <style>
-    /* Additional mobile optimizations for project detail page */
-    @media (max-width: 768px) {
-      .dashboard-embed {
-        border-radius: 4px !important;
-      }
-      
-      .dashboard-placeholder {
-        padding: 2rem 1rem !important;
-      }
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Sales CRM Implementation</title>
+    <link rel="stylesheet" href="styles/main.css"/>
+    <style>
+        html, body {
+            height: 100%;
+            min-height: 100%;
+            overflow-y: auto;
+        }
+        main {
+            min-height: 100vh;
+            overflow: visible;
+        }
+        .section.project-detail-section {
+            padding-bottom: 2rem;
+        }
+        /* Additional mobile optimizations for project detail page */
+        @media (max-width: 768px) {
+            .dashboard-embed {
+                border-radius: 4px !important;
+            }
+            .dashboard-placeholder {
+                padding: 2rem 1rem !important;
+            }
+            .section.project-detail-section {
+                padding-bottom: 3rem;
+            }
+        }
+    </style>
 
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-V6R4C4RV78');
-  </script>
-
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-V6R4C4RV78');
+    </script>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="nav-container">
-      <!-- <span class="logo">Aung Than Sein</span> -->
-      <a href="index.html#projects" class="back-link">&larr; Back to Projects</a>
-    </div>
-  </nav>
-  <main>
-    <section class="section project-detail-section">
-      <h1>Sales Performance Analytics for AdventureWorks Using SQL & Power BI</h1>
-      
-      <!-- Project Description Section -->
-      <div class="project-description">
-        <h3>Project Overview</h3>
-        <p>This project focuses on the analysis and visualization of the AdventureWorks database, which represents the operations of a fictional bicycle manufacturing company. The database contains comprehensive data on products, sales, customers, and employees.</p>
-        <p>Using SQL for data extraction and transformation, and Microsoft Power BI for visualization, the project delivers actionable insights into the company’s sales performance and operational metrics. Through the integration of advanced DAX functions, SQL queries, and dynamic data modeling, a comprehensive and interactive sales dashboard has been developed. This dashboard enables users to monitor key performance indicators (KPIs), assess team contributions, and forecast revenue trends in real-time.</p>
-        <p>The outcome includes a set of user-friendly reports and dashboards designed to support data-driven decision-making and enhance overall business understanding.</p>
-        
-        <h3>Key Features</h3>
-        <ul>
-          <li><strong>Interactive EDA Dashboards:</strong> Rich visual reports in Power BI featuring drill-down filters on sales trends, customer segments, and product performance.</li>
-          <li><strong>Sales Analytics:</strong> DAX-driven breakdowns of total, annual, and monthly sales to uncover revenue patterns and seasonality.</li>
-          <li><strong>Customer Behavior Insights:</strong> Segment exploration showing repeat purchasers and average spend per customer, revealing loyalty and value trends.</li>
-          <li><strong>Product Performance Metrics:</strong> Identification of top-selling products and category-level analysis with insights into quantity sold and revenue contribution.</li>
-          <li><strong>Operational SQL Insights:</strong> Use of SQL scripts for table exploration (e.g., DimCustomer, FactInternetSales), data cleansing, transformation, and aggregations.</li>
-        </ul>
-        
-        <h3>Technical Implementation</h3>
-        <ul>
-         <li><strong>AdventureWorksDW2022 Database:</strong> Restored in SQL Server for analysis; includes DimCustomer, DimDate, DimProducts, DimGeography, FactInternetSales.</li>
-         <li><strong>SQL (T‑SQL):</strong> Queries are used to extract and clean data from different tables like DimCustomers, DimProducts, FactInternetSales and etc.</li>
-         <li><strong>Power BI:</strong> Data modeling and interactive visual dashboards, including entity diagrams and sales/customer/product pages.</li>
-         <li><strong>DAX Measures:</strong> Transform data within Power BI, and apply DAX measures for KPIs like total sales, total order, profit & profit margin , distinct product and customer count.</li>
-        </ul>
-        
-        <h3>Business Impact</h3>
-        <ul>
-          <li><strong>Enhanced Sales Visibility:</strong> Decision‑ready insights with monthly/yearly sales trends, product performance, and customer segmentation.</li>
-          <li><strong>Optimized Resource Allocation:</strong> Data‑driven identification of top products and high-value customers boosts marketing and inventory strategy.</li>
-          <li><strong>Improved Data Accuracy & Timeliness:</strong> Automated refresh and integration reduce manual processing, ensure up-to-date reporting.</li>
-          <li><strong>Actionable Customer Insights:</strong> Analysis of repeat purchase behavior and average per-customer spend informs loyalty and sales tactics.</li>
-        </ul>
-      </div>
-      
-      <!-- Dashboard Embed Section -->
-      <div class="dashboard-container">
-        <h3>Interactive Sales Dashboard</h3>
-        <!-- Power BI Dashboard -->
-        <div class="dashboard-embed">
-          <iframe title="microsoft_adventure_work_data_analysis" width="100%" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiMDMzMWJmYmEtOWQwZC00NTMyLTljMGEtZDhjZjAwMjg4MDA5IiwidCI6IjM0YmQ4YmVkLTJhYzEtNDFhZS05ZjA4LTRlMGEzZjExNzA2YyJ9" frameborder="0" allowFullScreen="true"></iframe>
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- <span class="logo">Aung Than Sein</span> -->
+            <a href="index.html#projects" class="back-link" style="margin-bottom:2.5rem;display:inline-block">&larr; Back to Projects</a>
         </div>
-      </div>
-    </section>
-  </main>
-  
-  <script>
-    // Handle smooth scrolling to projects section when clicking back button
-    document.addEventListener('DOMContentLoaded', function() {
-      const backLink = document.querySelector('.back-link');
-      
-      if (backLink) {
-        backLink.addEventListener('click', function(e) {
-          e.preventDefault();
-          
-          // Navigate to index.html and then scroll to projects section
-          window.location.href = 'index.html#projects';
+    </nav>
+    <main>
+        <section class="section project-detail-section">
+            <h1 style="margin-top:2.5rem;">Sales Performance Analytics for AdventureWorks Using SQL & Power BI</h1>
+            <!-- Project Description Section -->
+            <div class="project-description">
+                <h3>Project Overview</h3>
+                <p>This project focuses on the analysis and visualization of the AdventureWorks database, which represents the operations of a fictional bicycle manufacturing company. The database contains comprehensive data on products, sales, customers, and employees.</p>
+                <p>Using SQL for data extraction and transformation, and Microsoft Power BI for visualization, the project delivers actionable insights into the company’s sales performance and operational metrics. Through the integration of advanced DAX functions, SQL queries, and dynamic data modeling, a comprehensive and interactive sales dashboard has been developed. This dashboard enables users to monitor key performance indicators (KPIs), assess team contributions, and forecast revenue trends in real-time.</p>
+                <p>The outcome includes a set of user-friendly reports and dashboards designed to support data-driven decision-making and enhance overall business understanding.</p>
+                <h3>Key Features</h3>
+                <ul>
+                    <li><strong>Interactive EDA Dashboards:</strong> Rich visual reports in Power BI featuring drill-down filters on sales trends, customer segments, and product performance.</li>
+                    <li><strong>Sales Analytics:</strong> DAX-driven breakdowns of total, annual, and monthly sales to uncover revenue patterns and seasonality.</li>
+                    <li><strong>Customer Behavior Insights:</strong> Segment exploration showing repeat purchasers and average spend per customer, revealing loyalty and value trends.</li>
+                    <li><strong>Product Performance Metrics:</strong> Identification of top-selling products and category-level analysis with insights into quantity sold and revenue contribution.</li>
+                    <li><strong>Operational SQL Insights:</strong> Use of SQL scripts for table exploration (e.g., DimCustomer, FactInternetSales), data cleansing, transformation, and aggregations.</li>
+                </ul>
+                <h3>Technical Implementation</h3>
+                <ul>
+                 <li><strong>AdventureWorksDW2022 Database:</strong> Restored in SQL Server for analysis; includes DimCustomer, DimDate, DimProducts, DimGeography, FactInternetSales.</li>
+                 <li><strong>SQL (T‑SQL):</strong> Queries are used to extract and clean data from different tables like DimCustomers, DimProducts, FactInternetSales and etc.</li>
+                 <li><strong>Power BI:</strong> Data modeling and interactive visual dashboards, including entity diagrams and sales/customer/product pages.</li>
+                 <li><strong>DAX Measures:</strong> Transform data within Power BI, and apply DAX measures for KPIs like total sales, total order, profit & profit margin , distinct product and customer count.</li>
+                </ul>
+                <h3>Business Impact</h3>
+                <ul>
+                    <li><strong>Enhanced Sales Visibility:</strong> Decision‑ready insights with monthly/yearly sales trends, product performance, and customer segmentation.</li>
+                    <li><strong>Optimized Resource Allocation:</strong> Data‑driven identification of top products and high-value customers boosts marketing and inventory strategy.</li>
+                    <li><strong>Improved Data Accuracy & Timeliness:</strong> Automated refresh and integration reduce manual processing, ensure up-to-date reporting.</li>
+                    <li><strong>Actionable Customer Insights:</strong> Analysis of repeat purchase behavior and average per-customer spend informs loyalty and sales tactics.</li>
+                </ul>
+            </div>
+            <!-- Dashboard Embed Section -->
+            <div class="dashboard-container">
+                <h3>Interactive Sales Dashboard</h3>
+                <!-- Power BI Dashboard -->
+                <div class="dashboard-embed">
+                    <iframe title="microsoft_adventure_work_data_analysis" width="100%" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiMDMzMWJmYmEtOWQwZC00NTMyLTljMGEtZDhjZjAwMjg4MDA5IiwidCI6IjM0YmQ4YmVkLTJhYzEtNDFhZS05ZjA4LTRlMGEzZjExNzA2YyJ9" frameborder="0" allowFullScreen="true"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        // Handle smooth scrolling to projects section when clicking back button
+        document.addEventListener('DOMContentLoaded', function() {
+            const backLink = document.querySelector('.back-link');
+            if (backLink) {
+                backLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.location.href = 'index.html#projects';
+                });
+            }
         });
-      }
-    });
-  </script>
+    </script>
 </body>
 </html>

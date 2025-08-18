@@ -1,128 +1,125 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sales CRM Implementation</title>
-  <link rel="stylesheet" href="css/style.css"/>
-  <style>
-    /* Additional mobile optimizations for project detail page */
-    @media (max-width: 768px) {
-      .dashboard-embed {
-        border-radius: 4px !important;
-      }
-      
-      .dashboard-placeholder {
-        padding: 2rem 1rem !important;
-      }
-    }
-  </style>
-
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-V6R4C4RV78');
-  </script>
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Sales CRM Implementation</title>
+    <link rel="stylesheet" href="styles/main.css"/>
+    <style>
+        html, body {
+            height: 100%;
+            min-height: 100%;
+            overflow-y: auto;
+        }
+        main {
+            min-height: 100vh;
+            overflow: visible;
+        }
+        .section.project-detail-section {
+            padding-bottom: 2rem;
+        }
+        /* Additional mobile optimizations for project detail page */
+        @media (max-width: 768px) {
+            .dashboard-embed {
+                border-radius: 4px !important;
+            }
+            .dashboard-placeholder {
+                padding: 2rem 1rem !important;
+            }
+            .section.project-detail-section {
+                padding-bottom: 3rem;
+            }
+        }
+    </style>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-V6R4C4RV78');
+    </script>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="nav-container">
-      <!-- <span class="logo">Aung Than Sein</span> -->
-      <a href="index.html#projects" class="back-link">&larr; Back to Projects</a>
-    </div>
-  </nav>
-  <main>
-    <section class="section project-detail-section">
-      <h1>HR Turnover Analysis Dashboard</h1>
-      
-      <!-- Project Description Section -->
-      <div class="project-description">
-        <h3>Project Overview</h3>
-        <p>
-          This interactive HR Turnover Dashboard provides a dynamic, data-driven overview of employee attrition across various demographics, departments, education levels, and job roles. Built entirely in Excel using advanced charting techniques, it enables HR leaders to monitor workforce stability, identify high-risk groups, and develop strategic retention initiatives.
-        </p>
-         <p>
-          The Excel dashboard offers an intuitive way to explore employee turnover trends. Through interactive filters (slicers), users can segment the data by department, gender, and education field. This interactivity helps HR professionals and decision-makers drill down into patterns of employee departures and gain actionable workforce insights.
-        </p>
-        <p>
-          This project demonstrates end-to-end HR analytics in Excel, from raw data structuring and cleaning to pivot-based analysis and visual storytelling. It highlights how Excel can be effectively used for people analytics and HR decision support.
-        </p>
-        
-        <h3>Key Features</h3>
-        <h3>👥 Workforce Overview</h3>
-        
-        <ul>
-        <li><strong>Workforce Insights:</strong> The organization has a total of 1,470 employees, out of which 1,233 are currently active. Over the reporting period, 237 employees left the company, resulting in a turnover rate of 16.12%. The average age of employees is 36.9 years, and the overall job satisfaction score across the workforce stands at 2.6 out of 4.</li>
-        </ul>
-        
-        <h3>🧑‍💼 Turnover Demographics</h3>
-        <ul>
-          <li><strong>By Gender:</strong> Males represent 63% of attrition, Females 37%.</li>
-          <li><strong>By Age Group:</strong> The 25–34 group shows the highest turnover (112 employees), followed by 35–44 and under 25.</li>
-          <li><strong>By Marital Status:</strong> Single employees accounted for 120 turnovers, married 84, and divorced 33—indicating lifestyle and stability may impact attrition.</li>   
-        </ul>
-
-        <h3>🎓 Education & Job Role Analysis</h3>
-        <ul>       
-          
-          <li><strong>By Education:</strong> Bachelor's Degree holders have the highest turnover (99), followed by Master’s (58) and Associate’s (44).</li>
-          <li><strong>By Job Role:</strong> Laboratory Technicians (62) and Sales Executives (57) lead turnover counts, with roles like Research Scientists, HR, and Managers contributing smaller but significant portions.</li>
-         </ul>
-          
-        <h3>🏢 Department-Wise Insights</h3>
-        <p>
-          The analysis shows that R&D experienced the highest number of turnovers with 133 employees, accounting for 56% of total attrition. This is followed by the Sales department, which had 92 turnovers (39%), while the HR department had the lowest attrition with only 12 employees (5%) leaving.
-        </p>
-        
-        <h3>🧩 Interactive Filtering</h3>
-        <p>
-          Filters by Department, Education Field, and Gender enable easy segmentation and deeper exploration of trends.
-        </p>
-
-
-        <h3>Technical Implementation</h3>
-        <ul>      
-          <li><strong>Excel Dashboarding:</strong> Built using interactive charts including pictograms, clustered columns, 3D columns, doughnuts, horizontal bars, and stacked visuals.</li>
-          <li><strong>Pivot Tables & Slicers:</strong> Enable dynamic filtering and fast analysis across multiple employee attributes.</li>
-          <li><strong>Formulas & Data Prep:</strong> Utilized CONCAT, IFERROR, TEXT, GETPIVOTDATA, TEXT, and basic logical functions for metric calculations and formatting.</li>
-          </ul>
-        
-        <h3>Business Impact</h3>
-        <ul>
-          <li><strong>📉 Attrition Risk Identification:</strong> Helps HR teams pinpoint high-turnover segments such as R&D employees, younger workforce (25–34), and Bachelor’s degree holders. Enables proactive retention strategies.</li>
-          <li><strong>📊 Workforce Planning:</strong> Supports evidence-based planning around hiring needs, succession planning, and employee engagement policies.</li>
-          <li><strong>👥 Inclusion & Retention Strategy:</strong> Highlights gender and marital status trends that can inform diversity, equity, and inclusion efforts, as well as personalized retention programs.</li>
-          <li><strong>📈 HR Reporting Efficiency:</strong> Accelerates the creation of monthly or quarterly HR reports for executive teams by providing a ready-to-use dashboard with key attrition metrics.</li>
-        </ul>
-      </div>
-      
-      <!-- Dashboard Embed Section -->
-      <div class="dashboard-container">
-        <h3>Interactive HR Turnover Analysis Dashboard</h3>
-        <!-- Power BI Dashboard -->
-        <div class="dashboard-embed">
-          <iframe src="https://1drv.ms/x/c/d6f608acfba36cca/IQQTlyo-pFwJQYmiJf1t7nmmAZh4MSJfN-94yn8NKs8jt3s" width="402" height="346" frameborder="0" scrolling="no"></iframe>            </div>
-      </div>
-    </section>
-  </main>
-  
-  <script>
-    // Handle smooth scrolling to projects section when clicking back button
-    document.addEventListener('DOMContentLoaded', function() {
-      const backLink = document.querySelector('.back-link');
-      
-      if (backLink) {
-        backLink.addEventListener('click', function(e) {
-          e.preventDefault();
-          
-          // Navigate to index.html and then scroll to projects section
-          window.location.href = 'index.html#projects';
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- <span class="logo">Aung Than Sein</span> -->
+            <a href="index.html#projects" class="back-link" style="margin-bottom:2.5rem;display:inline-block">&larr; Back to Projects</a>
+        </div>
+    </nav>
+    <main>
+        <section class="section project-detail-section">
+            <h1 style="margin-top:2.5rem;">HR Turnover Analysis Dashboard</h1>
+            <!-- Project Description Section -->
+            <div class="project-description">
+                <h3>Project Overview</h3>
+                <p>
+                    This interactive HR Turnover Dashboard provides a dynamic, data-driven overview of employee attrition across various demographics, departments, education levels, and job roles. Built entirely in Excel using advanced charting techniques, it enables HR leaders to monitor workforce stability, identify high-risk groups, and develop strategic retention initiatives.
+                </p>
+                 <p>
+                    The Excel dashboard offers an intuitive way to explore employee turnover trends. Through interactive filters (slicers), users can segment the data by department, gender, and education field. This interactivity helps HR professionals and decision-makers drill down into patterns of employee departures and gain actionable workforce insights.
+                </p>
+                <p>
+                    This project demonstrates end-to-end HR analytics in Excel, from raw data structuring and cleaning to pivot-based analysis and visual storytelling. It highlights how Excel can be effectively used for people analytics and HR decision support.
+                </p>
+                <h3>Key Features</h3>
+                <h3>Workforce Overview</h3>
+                <ul>
+                <li><strong>Workforce Insights:</strong> The organization has a total of 1,470 employees, out of which 1,233 are currently active. Over the reporting period, 237 employees left the company, resulting in a turnover rate of 16.12%. The average age of employees is 36.9 years, and the overall job satisfaction score across the workforce stands at 2.6 out of 4.</li>
+                </ul>
+                <h3>Turnover Demographics</h3>
+                <ul>
+                    <li><strong>By Gender:</strong> Males represent 63% of attrition, Females 37%.</li>
+                    <li><strong>By Age Group:</strong> The 25–34 group shows the highest turnover (112 employees), followed by 35–44 and under 25.</li>
+                    <li><strong>By Marital Status:</strong> Single employees accounted for 120 turnovers, married 84, and divorced 33—indicating lifestyle and stability may impact attrition.</li>   
+                </ul>
+                <h3>Education & Job Role Analysis</h3>
+                <ul>       
+                    <li><strong>By Education:</strong> Bachelor's Degree holders have the highest turnover (99), followed by Master’s (58) and Associate’s (44).</li>
+                    <li><strong>By Job Role:</strong> Laboratory Technicians (62) and Sales Executives (57) lead turnover counts, with roles like Research Scientists, HR, and Managers contributing smaller but significant portions.</li>
+                 </ul>
+                <h3>Department-Wise Insights</h3>
+                <p>
+                    The analysis shows that R&D experienced the highest number of turnovers with 133 employees, accounting for 56% of total attrition. This is followed by the Sales department, which had 92 turnovers (39%), while the HR department had the lowest attrition with only 12 employees (5%) leaving.
+                </p>
+                <h3>Interactive Filtering</h3>
+                <p>
+                    Filters by Department, Education Field, and Gender enable easy segmentation and deeper exploration of trends.
+                </p>
+                <h3>Technical Implementation</h3>
+                <ul>      
+                    <li><strong>Excel Dashboarding:</strong> Built using interactive charts including pictograms, clustered columns, 3D columns, doughnuts, horizontal bars, and stacked visuals.</li>
+                    <li><strong>Pivot Tables & Slicers:</strong> Enable dynamic filtering and fast analysis across multiple employee attributes.</li>
+                    <li><strong>Formulas & Data Prep:</strong> Utilized CONCAT, IFERROR, TEXT, GETPIVOTDATA, TEXT, and basic logical functions for metric calculations and formatting.</li>
+                    </ul>
+                <h3>Business Impact</h3>
+                <ul>
+                    <li><strong>Attrition Risk Identification:</strong> Helps HR teams pinpoint high-turnover segments such as R&D employees, younger workforce (25–34), and Bachelor’s degree holders. Enables proactive retention strategies.</li>
+                    <li><strong>Workforce Planning:</strong> Supports evidence-based planning around hiring needs, succession planning, and employee engagement policies.</li>
+                    <li><strong>Inclusion & Retention Strategy:</strong> Highlights gender and marital status trends that can inform diversity, equity, and inclusion efforts, as well as personalized retention programs.</li>
+                    <li><strong>HR Reporting Efficiency:</strong> Accelerates the creation of monthly or quarterly HR reports for executive teams by providing a ready-to-use dashboard with key attrition metrics.</li>
+                </ul>
+            </div>
+            <!-- Dashboard Embed Section -->
+            <div class="dashboard-container">
+                <h3>Interactive HR Turnover Analysis Dashboard</h3>
+                <!-- Power BI Dashboard -->
+                <div class="dashboard-embed">
+                    <iframe src="https://1drv.ms/x/c/d6f608acfba36cca/IQQTlyo-pFwJQYmiJf1t7nmmAZh4MSJfN-94yn8NKs8jt3s" width="100%" height="600" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        // Handle smooth scrolling to projects section when clicking back button
+        document.addEventListener('DOMContentLoaded', function() {
+            const backLink = document.querySelector('.back-link');
+            if (backLink) {
+                backLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.location.href = 'index.html#projects';
+                });
+            }
         });
-      }
-    });
-  </script>
+    </script>
 </body>
 </html>

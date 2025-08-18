@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aungthansein-rishi.github.io/sitemap.xml
