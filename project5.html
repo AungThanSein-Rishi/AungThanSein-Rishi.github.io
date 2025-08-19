@@ -48,76 +48,71 @@
     </nav>
     <main>
         <section class="section project-detail-section">
-            <h1 style="margin-top:2.5rem;">Bank Churn Rate Analysis</h1>
+            <h1 style="margin-top:2.5rem;">Customer Churn Analytics Dashboard – Power BI</h1>
             <!-- Project Description Section -->
             <div class="project-description">
                 <h3>Project Overview</h3>
                 <p>
-                    This interactive dashboard provides a detailed view of customer churn behavior across demographics, financial standing, and product engagement. Built in Power BI, it integrates customer-level data to uncover key drivers of churn and retention. The solution enables banks to identify high-risk segments, analyze churn trends, and design proactive customer retention strategies.
+                    This project delivers an interactive churn analysis solution tailored for the banking sector. Built entirely in Power BI, it integrates demographic, financial, and product-level data to reveal the key drivers of churn and retention. The dashboard enables leadership to identify high-risk customer segments, track churn trends, and design proactive retention strategies to minimize revenue leakage.
                 </p>
                  
                 <h3>Key Features</h3>
                 <h3>Churn & Customer Metrics</h3>
                 <ul>
-                    <li><strong>Total Customers Analyzed:</strong>  10,000</li>                    
+                    <li><strong>Total Customers:</strong>  10,000</li>                    
                     <li><strong>Overall Churn Rate:</strong> 20.4% (≈2,037 churned customers)</li>                    
-                    <li><strong>KPIs on:</strong> Average Age (39), Tenure (5 years), Avg. Bank Balance ($76K), and Avg. Credit Score (651).</li>
+                    <li><strong>KPIs:</strong> Average Age (39), Average Tenure (5 years), Avg. Bank Balance ($76K), Avg. Credit Score (651)</li>
                 </ul>
 
                 
                 <h3>Churn Insights by Dimension</h3>
                 <ul>
-                    <li><strong>Churn Status:</strong> 20.4% of customers churned, holding 24.3% of total bank balance ($186M).</li>
+                    <li><strong>Overall Churn:</strong> 20.4% of customers churned, holding 24.3% of total bank balance ($186M)</li>
 
-                    <li><strong>Product Churn:</strong> 
+                    <li><strong>Product Engagement:</strong> 
                         <ul>
-                            <li>Product 1: Moderate churn rate (27.7%), majority of customers retained.</li>
-                            <li>Product 2: Lowest churn rate (7.6%), strongest retention performance.</li>
-                            <li>Product 3: High churn rate (82.7%), majority of customers lost.</li>
-                            <li>Product 4: Complete churn (100%), all customers lost.</li>
+                            <li>Product 1 → Moderate churn (27.7%)</li>
+                            <li>Product 2 → Strongest retention (7.6% churn)</li>
+                            <li>Product 3 → High risk (82.7% churn)</li>
+                            <li>Product 4 → 100% churn, complete customer loss</li>
                         </ul> 
                     </li>
 
                     <li><strong>Gender:</strong> Female churn (25.1%) significantly higher than male churn (16.5%).</li>
-                    <li><strong>Geography:</strong> Germany records the highest churn (32.4%), vs. France (16.2%) and Spain (16.7%).</li>
+                    <li><strong>Geography:</strong> Germany (32.4%) shows highest churn vs. France (16.2%) and Spain (16.7%)</li>
                 </ul>
 
-                <h3>Financial Metrics Impact</h3>
+                <h3>Financial & Segment Insights</h3>
                 <ul>       
                     <li><strong>Bank Balance:</strong> Customers with low balances (&lt;$80K) churn more (22.1%), while very high balances (200K) also show churn (&gt;21.6%).</li>
                     <li><strong>Credit Score:</strong> Low scores (&lt;580) show higher churn (22%), while excellent scores (≥800) show stability (19.5%).</li>
                     <li><strong>Estimated Salary:</strong> Premium earners (>200K) still churn at 21.6%, highlighting competitive risks.</li>
-                 </ul>
-
-                <h3>Customer Segments</h3>
-                <ul>       
-                    <li><strong>Age:</strong>Younger (20–30) and new customers (&lt;2 years tenure) show higher churn risk (up to 23%).</li>
-                    <li><strong>Tenure:</strong> Mid-tenure customers (5–8 years) are the most loyal.</li>
-                 </ul>
-
+                    <li><strong>Age & Tenure:</strong> Age group (40–50) and new customers (&lt;2 years tenure) show higher churn risk (up to 56.9%), while mid-tenure customers (5–8 years) are most loyal.</li>     
+                </ul>              
                 
-                
-                <h3>Formula & Calculation</h3>
+                <h3>Technical Implementation</h3>
 
-                <p>Churn metrics are derived using DAX measures to calculate churn %, retention rates, and customer segment breakdowns. Key measures include:</p>
                 <ul>      
-                    <li><strong>Churn Rate:</strong>Churned Customers ÷ Total Customers</li>
+                    <li><strong>Power BI:</strong>Dashboard developed fully in Power BI Desktop with calculated columns and DAX measures.</li>
+                    <li><strong>Data Modeling:</strong>Central customer fact table integrated with demographic, product, and financial attributes.</li>
+                    <li><strong>Advanced DAX Measures:</strong>Churn %, retention rates, customer segmentation, product churn rates, and financial impact metrics.</li>
+                    <li><strong>Visual Design:</strong>Interactive layouts with Charts and KPI cards to simplify churn diagnostics.</li>
                 </ul>
 
                 <h3>Business Impact</h3>
                 <ul>
-                    <li><strong>Customer Retention Strategy:</strong> Clear identification of at-risk groups (females, Germans, low credit scores, premium earners).</li>
-                    <li><strong>Product Optimization:</strong> Product 3 & 4 require urgent review to prevent further loss.</li>
-                    <li><strong>Targeted Interventions:</strong> Early-tenure onboarding, female-focused campaigns, and premium customer white-glove services.</li>
-                    <li><strong>Financial Stability:</strong> Protecting $186M in balances held by churned customers is critical for long-term profitability.</li>
+                    <li><strong>Customer Retention Strategy:</strong> Identifies high-risk segments (female, German customers, low credit scores, premium earners) for targeted action.</li>
+                    <li><strong>Product Optimization:</strong> Urgent review needed for Product 3 & 4 to prevent further losses.</li>
+                    <li><strong>Targeted Interventions:</strong> Early-tenure onboarding programs, female-focused campaigns, and premium customer loyalty initiatives.</li>
+                    <li><strong>Financial Stability:</strong> Protects $186M in balances held by churned customers, safeguarding long-term profitability.</li>
                 </ul>
             </div>
             <!-- Dashboard Embed Section -->
             <div class="dashboard-container">
-                <h3>Interactive Bank Churn Rate Analysis Dashboard</h3>
+                <h3>Interactive Churn Analytics Dashboard</h3>
                 <!-- Power BI Dashboard -->
                 <div class="dashboard-embed">                    
-                    <iframe title="Bank Churn Rate Analysis (Aung Than Sein)" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiYWE5OTBkMGItZWNmYi00ZWE1LWIxYjctZmY2YzNjNDk2MWVhIiwidCI6IjM0YmQ4YmVkLTJhYzEtNDFhZS05ZjA4LTRlMGEzZjExNzA2YyJ9" frameborder="0" allowFullScreen="true"></iframe>
+                    <iframe title="Customer Churn Analytics Dashboard" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiNDcwMjEyZjYtNzM2Mi00NDhmLWFkODctNGExMzQxMWU4YTdiIiwidCI6IjM0YmQ4YmVkLTJhYzEtNDFhZS05ZjA4LTRlMGEzZjExNzA2YyJ9" frameborder="0" allowFullScreen="true"></iframe>
                 </div>
             </div>
         </section>
