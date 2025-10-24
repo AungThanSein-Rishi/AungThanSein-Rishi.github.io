@@ -1,79 +1,84 @@
-/**
- * Simple Achievements Carousel Implementation - Horizontal Sliding Window
- */
-(function() {
-    let currentPosition = 0;
-    let autoplayInterval = null;
-    let itemWidth = 280; // Base width + gap
-    let visibleItems = 4; // Number of items visible at once
-    let totalItems = 10;
-    
-    function initCarousel() {
-        console.log('Initializing achievements horizontal carousel...');
-        
-        // Get elements
-        const carousel = document.getElementById('achievementsCarousel');
-        const prevBtn = document.getElementById('achievementsLeftBtn');
-        const nextBtn = document.getElementById('achievementsRightBtn');
-        
-        if (!carousel || !prevBtn || !nextBtn) {
-            console.error('Achievements carousel elements not found');
-            return;
-        }
-        
-        console.log('All achievements carousel elements found');
-        
-        // Calculate carousel properties
-        updateCarouselProperties();
-        
-        // Bind events
-        prevBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            console.log('Previous button clicked - achievements carousel');
-            goToPrev();
-        });
-        
-        nextBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            console.log('Next button clicked - achievements carousel');
-            goToNext();
-        });
-        
-        // Start autoplay
-        startAutoplay();
-        
-        // Initial update
-        updateCarousel();
 
-    // Bind image click -> modal (progressive enhancement if global openImageModal available)
-    bindImageClicks();
-        
-        // Handle window resize
-        window.addEventListener('resize', function() {
-            updateCarouselProperties();
-            updateCarousel();
+(function () {
+    const carousels = [];
+
+    function initAllCarousels() {
+        console.log('Initializing all carousels...');
+
+        // Find all carousel containers (divs ending with "Carousel")
+        const carouselElements = document.querySelectorAll('[id$="Carouselimg"]');
+
+        carouselElements.forEach((carouselEl) => {
+            const id = carouselEl.id;
+            const section = carouselEl.closest('.section, section'); // find parent section
+
+            // Look for navigation buttons *within the same section*
+            const prevBtn = section?.querySelector('.carousel-nav.prev');
+            const nextBtn = section?.querySelector('.carousel-nav.next');
+
+            if (!prevBtn || !nextBtn) {
+                console.warn(`Skipping ${id}: missing navigation buttons in section`);
+                return;
+            }
+
+            const state = {
+                id,
+                currentPosition: 0,
+                autoplayInterval: null,
+                itemWidth: 280,
+                visibleItems: 4,
+                totalItems: carouselEl.children.length,
+                elements: { carouselEl, prevBtn, nextBtn },
+            };
+
+            setupCarousel(state);
+            carousels.push(state);
         });
-        
-        console.log('Achievements horizontal carousel initialized successfully');
+
+        console.log(`Initialized ${carousels.length} carousels successfully`);
     }
 
-    function bindImageClicks() {
-        const items = document.querySelectorAll('#achievementsCarousel .achievement-item');
-        if (!items.length) return;
-        items.forEach(item => {
-            if (item.dataset.modalBound) return; // prevent double bind
+    function setupCarousel(state) {
+        const { id } = state;
+        console.log(`Setting up ${id}...`);
+
+        updateCarouselProperties(state);
+        bindNavigation(state);
+        bindImageClicks(state);
+        startAutoplay(state);
+        updateCarousel(state);
+
+        window.addEventListener('resize', () => {
+            updateCarouselProperties(state);
+            updateCarousel(state);
+        });
+    }
+
+    function bindNavigation(state) {
+        const { elements } = state;
+
+        elements.prevBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            goToPrev(state);
+        });
+
+        elements.nextBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            goToNext(state);
+        });
+    }
+
+    function bindImageClicks(state) {
+        const { carouselEl } = state.elements;
+        const items = carouselEl.querySelectorAll('.achievement-item, .cert-item, .carousel-item');
+
+        items.forEach((item) => {
+            if (item.dataset.modalBound) return;
             item.dataset.modalBound = 'true';
             item.addEventListener('click', () => {
                 const img = item.querySelector('img');
-                if (img) {
-                    if (typeof window.openImageModal === 'function') {
-                        console.log('Opening image modal for achievements item', img.src);
-                        window.openImageModal(img.src, img.alt || 'Achievement');
-                    } else {
-                        console.warn('openImageModal not found on window');
-                    }
-                } else {
-                    console.warn('No img found inside achievement-item');
+                if (img && typeof window.openImageModal === 'function') {
+                    window.openImageModal(img.src, img.alt || 'Image');
                 }
             });
             item.setAttribute('tabindex', '0');
@@ -85,95 +90,68 @@
             });
         });
     }
-    
-    function updateCarouselProperties() {
+
+    function updateCarouselProperties(state) {
         const screenWidth = window.innerWidth;
-        
+        let itemWidth, visibleItems;
+
         if (screenWidth <= 360) {
-            itemWidth = 156; // 140px + 16px gap
+            itemWidth = 156;
             visibleItems = 2;
         } else if (screenWidth <= 480) {
-            itemWidth = 176; // 160px + 16px gap  
+            itemWidth = 176;
             visibleItems = 2;
         } else if (screenWidth <= 768) {
-            itemWidth = 216; // 200px + 16px gap
+            itemWidth = 216;
             visibleItems = 3;
         } else {
-            itemWidth = 296; // 280px + 16px gap
+            itemWidth = 296;
             visibleItems = 4;
         }
-        
-        console.log(`Updated carousel properties: itemWidth=${itemWidth}, visibleItems=${visibleItems}`);
+
+        state.itemWidth = itemWidth;
+        state.visibleItems = visibleItems;
     }
-    
-    function goToNext() {
-        const maxPosition = totalItems - visibleItems;
-        
-        if (currentPosition < maxPosition) {
-            currentPosition++;
-        } else {
-            // Loop back to beginning
-            currentPosition = 0;
-        }
-        
-        updateCarousel();
-        resetAutoplay();
+
+    function goToNext(state) {
+        const maxPosition = state.totalItems - state.visibleItems;
+        state.currentPosition = state.currentPosition < maxPosition ? state.currentPosition + 1 : 0;
+        updateCarousel(state);
+        resetAutoplay(state);
     }
-    
-    function goToPrev() {
-        const maxPosition = totalItems - visibleItems;
-        
-        if (currentPosition > 0) {
-            currentPosition--;
-        } else {
-            // Loop to end
-            currentPosition = maxPosition;
-        }
-        
-        updateCarousel();
-        resetAutoplay();
+
+    function goToPrev(state) {
+        const maxPosition = state.totalItems - state.visibleItems;
+        state.currentPosition = state.currentPosition > 0 ? state.currentPosition - 1 : maxPosition;
+        updateCarousel(state);
+        resetAutoplay(state);
     }
-    
-    function updateCarousel() {
-        const carousel = document.getElementById('achievementsCarousel');
-        
-        if (!carousel) return;
-        
-        // Calculate translation
-        const translateX = -currentPosition * itemWidth;
-        
-        carousel.style.transform = `translateX(${translateX}px)`;
-        
-        console.log(`Achievements carousel: Moving to position ${currentPosition} (${translateX}px)`);
+
+    function updateCarousel(state) {
+        const translateX = -state.currentPosition * state.itemWidth;
+        state.elements.carouselEl.style.transform = `translateX(${translateX}px)`;
     }
-    
-    function startAutoplay() {
-        if (autoplayInterval) {
-            clearInterval(autoplayInterval);
-        }
-        
-        autoplayInterval = setInterval(() => {
-            console.log('Achievements carousel: Auto-advancing');
-            goToNext();
-        }, 3000); // 3 seconds for achievements
+
+    function startAutoplay(state) {
+        if (state.autoplayInterval) clearInterval(state.autoplayInterval);
+        state.autoplayInterval = setInterval(() => goToNext(state), 3000);
     }
-    
-    function resetAutoplay() {
-        startAutoplay();
+
+    function resetAutoplay(state) {
+        startAutoplay(state);
     }
-    
+
     // Initialize when DOM is ready
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initCarousel);
+        document.addEventListener('DOMContentLoaded', initAllCarousels);
     } else {
-        initCarousel();
+        initAllCarousels();
     }
-    
-    // Global access for debugging
-    window.simpleAchievementsCarousel = {
-        next: goToNext,
-        prev: goToPrev,
-        getCurrentPosition: () => currentPosition,
-        updateProperties: updateCarouselProperties
+
+    // Optional global access for debugging
+    window.multiCarousel = {
+        all: carousels,
+        next: (id) => carousels.find(c => c.id === id) && goToNext(carousels.find(c => c.id === id)),
+        prev: (id) => carousels.find(c => c.id === id) && goToPrev(carousels.find(c => c.id === id)),
     };
 })();
