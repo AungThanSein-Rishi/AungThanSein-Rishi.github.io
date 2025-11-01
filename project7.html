@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Sales CRM Implementation</title>
+    <link rel="stylesheet" href="styles/main.css"/>
+    <style>
+        html, body {
+            height: 100%;
+            min-height: 100%;
+            overflow-y: auto;
+        }
+        main {
+            min-height: 100vh;
+            overflow: visible;
+        }
+        .section.project-detail-section {
+            padding-bottom: 2rem;
+        }
+        /* Additional mobile optimizations for project detail page */
+        @media (max-width: 768px) {
+            .dashboard-embed {
+                border-radius: 4px !important;
+            }
+            .dashboard-placeholder {
+                padding: 2rem 1rem !important;
+            }
+            .section.project-detail-section {
+                padding-bottom: 3rem;
+            }
+        }
+    </style>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V6R4C4RV78"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-V6R4C4RV78');
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- <span class="logo">Aung Than Sein</span> -->
+            <a href="index.html#projects" class="back-link" style="margin-bottom:2.5rem;display:inline-block">&larr; Back to Projects</a>
+        </div>
+    </nav>
+    <main>
+        <section class="section project-detail-section">
+            <h1 style="margin-top:2.5rem;">🍕 Pizza Sales Analysis Dashboard</h1>
+            <h1 style="margin-top:0.5rem;">(Tableau Project)</h1>
+            <!-- Project Description Section -->
+            <div class="project-description">
+                <h3>Project Overview</h3>
+                <p>
+                    This project focuses on designing an interactive Tableau dashboard to analyze pizza sales performance across various categories, sizes, and time periods. The goal is to uncover key business insights such as peak sales hours, best-selling pizzas, category-wise contributions, and weekly or monthly order trends to drive data-driven decision-making for a pizza restaurant chain.
+                </p>
+
+                <p>
+                    The solution is designed for restaurant operations, marketing, and supply chain teams who rely on real-time sales insights to optimize inventory, promotions, and staffing. By leveraging Tableau’s advanced visualization and dynamic filtering, this dashboard empowers managers to track KPIs, identify high-performing pizzas, and monitor low-performing products efficiently.
+                </p>
+                
+                <h3>Dashboard 1: Pizza Sales Performance Overview</h3>
+                <h3>Key Features</h3>
+
+                <h3>Overall KPIs</h3>
+                <ul>
+                    <li>o	Total Sales: $817,860 | Total Quantity: 49,574 | Total Orders: 21,350 | AVG Order Value: $38.31 | AVG Order Size: 2.32</li>
+                    <li>o	These metrics summarize the restaurant’s overall sales performance during the period from January 1, 2015 to December 31, 2015.</li>
+                </ul>
+
+                <h3>Order Trends Analysis</h3>
+                <ul>
+                    <h3>• Hourly Trends</h3>
+                        <li>o	Orders peak between 12 PM and 2 PM (lunch hours) and again between 4 PM and 8 PM (evening rush).</li>
+                        <li>o	Visual patterns highlight high demand during dining hours, helping schedule staff efficiently.</li>
+                </ul>
+
+                <ul>
+                    <h3>• Monthly Trends</h3>
+                    <li>o	Sales fluctuate throughout the year, with the highest peak observed in July.</li>
+                    <li>o	This supports identifying seasonal promotions or monthly marketing campaigns.</li>
+                </ul>
+
+                <ul>
+                    <h3>• Weekly Trends</h3>
+                    <li>o   Friday records the highest number of orders, indicating end-of-week customer spikes.</li>
+                    <li>o	Average weekly orders are around 3,050, helping forecast weekly demand cycles.</li>
+                </ul>
+
+              
+
+                <h3>Sales Distribution</h3>
+                <ul>
+                    <h3>• Sales by Pizza Category</h3>
+                        <li>o	Classic pizzas contribute the highest total sales ($220,053 or 26.9%) followed by Supreme ($208,197) and Chicken ($195,920).</li>
+                        <li>o	Veggie pizzas account for 23.7% of total revenue.</li>
+                </ul>
+
+                <ul>
+                    <h3>• Sales by Pizza Size</h3>
+                    <li>o	Large-sized pizzas dominate with 45.9% of total sales, Medium pizzas follow with 30.5%, while small pizzas contribute 21.8%.</li>
+                    <li>o	Extra-large and double extra-large sizes have minimal impact, suggesting low demand for oversized options.</li>
+                </ul>
+
+                <ul>
+                    <h3>• Category Performance</h3>
+                    <li>o	The Classic pizza category leads in sales, orders, and quantity sold.</li>
+                    <li>o	Insights help the business focus on high-demand categories and streamline production.</li>
+                </ul>
+
+              
+
+
+
+                <h3>Dashboard 2: Top or Bottom Contributor Analysis</h3>
+                <h3>•	Top Contributors</h3>
+                <ul>
+                    <li>o   The Thai Chicken Pizza generates the highest sales ($43,434).</li>
+                    <li>o	The Classic Deluxe Pizza receives the most orders (2,329).</li>
+                    <li>o	The Classic Deluxe Pizza also records the highest total quantity sold (2,453).</li>
+                </ul>
+
+                <p>
+                    These metrics help identify top-performing products for targeted marketing and upselling strategies.
+                </p>
+
+
+                <h3>•   BottomContributors</h3>
+                <ul>
+                    <li>o	The Brie Carre Pizza generates the lowest sales ($11,588).</li>
+                    <li>o	The Brie Carre Pizza also records the fewest orders (480).</li>
+                    <li>o	The Brie Carre Pizza contributes the least quantity sold (490).</li>
+                </ul>
+
+                <p>
+                    This data enables managers to evaluate underperforming products, adjust pricing, or consider removing low-demand items.
+                </p>
+
+
+                <h3>Business Insights & Impact</h3>
+
+               <ul>
+                    <li>•	Operational Efficiency: Hourly and weekly order trends guide optimal staff scheduling and oven utilization.</li>
+                    <li>•	Marketing Strategy: Top-performing pizzas like Thai Chicken and Classic Deluxe can be featured in promotions.</li>
+                    <li>•	Inventory Planning: Category and size-based insights ensure better raw material forecasting.</li>
+                    <li>•	Profitability Improvement: Identifying low-selling pizzas like Brie Carre helps reduce waste and focus on profitable SKUs.</li>
+                </ul>
+                
+
+            </div>
+
+            <!-- Dashboard Embed Section -->
+            <div class="dashboard-container">
+                <h3>Tableau Interactive Sales & Contributor Analysis Dashboard</h3>
+                <!-- Power BI Dashboard -->
+                <div class="dashboard-embed">                    
+                    <div class='tableauPlaceholder' id='viz1761995630529' style='position: relative'><noscript><a href='#'><img alt='Contributor Analysis ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pi&#47;PizzaSalesAnalysisDashboards&#47;PizzaPerformance&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='PizzaSalesAnalysisDashboards&#47;PizzaPerformance' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pi&#47;PizzaSalesAnalysisDashboards&#47;PizzaPerformance&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1761995630529');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1500px';vizElement.style.height='877px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1500px';vizElement.style.height='877px';} else { vizElement.style.width='100%';vizElement.style.height='2927px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                </div>
+                              
+            </div>
+        </section>
+    </main>
+    <script>
+        // Handle smooth scrolling to projects section when clicking back button
+        document.addEventListener('DOMContentLoaded', function() {
+            const backLink = document.querySelector('.back-link');
+            if (backLink) {
+                backLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.location.href = 'index.html#projects';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
