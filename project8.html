@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Sales CRM Implementation</title>
+            <link rel="stylesheet" href="styles/main.css"/>
+        <style>
+                html, body {
+                    height: 100%;
+                    min-height: 100%;
+                    overflow-y: auto;
+                }
+                main {
+                    min-height: 100vh;
+                    overflow: visible;
+                }
+                .section.project-detail-section {
+                    padding-bottom: 2rem;
+                }
+                /* Additional mobile optimizations for project detail page */
+                @media (max-width: 768px) {
+                    .dashboard-embed {
+                        border-radius: 4px !important;
+                    }
+                    .dashboard-placeholder {
+                        padding: 2rem 1rem !important;
+                    }
+                    .section.project-detail-section {
+                        padding-bottom: 3rem;
+                    }
+                }
+        </style>
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-V6R4C4RV78"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-V6R4C4RV78');
+        </script>
+
+        <meta name="description" content="Power BI Sales Intelligence dashboard for FMCG with KPI tracking and store performance analytics">
+        <meta property="og:image" content="image/project_img/Amul FMCG Sales Intelligence & Store Performance.png">
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- <span class="logo">Aung Than Sein</span> -->
+                <a href="index.html#projects" class="back-link" style="margin-bottom:2.5rem;display:inline-block">&larr; Back to Projects</a>
+            </div>
+        </nav>
+        <main>
+            <section class="section project-detail-section">
+                <h1 style="margin-top:2.5rem;">Insurance Claim, Risk & Profitability Analysis Dashboard</h1>
+                <h1 style="margin-top:0.5rem;">(Power BI Project)</h1>
+                <!-- Project Description Section -->
+                <div class="project-description">
+                    <h3>Project Overview</h3>
+                    <p>
+                        This project delivers an interactive, end-to-end insurance portfolio analytics solution designed to provide comprehensive visibility into claims performance, risk exposure, and underwriting profitability. Built entirely in Power BI, the solution transforms raw insurance data into actionable insights.
+                    </p>
+                     <p>
+                        Using DAX measures, and calculated logic, the dashboard enables stakeholders to analyze policy distribution, claim behavior, settlement efficiency, loss ratios, underwriting margins, and high-risk customer segments. The solution is structured across two analytical layers — Executive Overview and Risk & Profitability — supporting both executive decision-making and operational risk management.
+                    </p>
+                    <h3>Key Features</h3>
+                    <ul>
+                    <li><strong>Interactive Executive Dashboards:</strong> Professionally designed multi-page Power BI dashboards provide KPI-driven executive overviews and detailed Risk & Profitability analysis through intuitive slicers and cross-filtering.</li>
+                    </ul>
+                    <ul>
+                        <li><strong>Policy & Portfolio Insights:</strong> The dashboard delivers visibility into policy distribution, coverage exposure, and high-contributing insurance products across portfolio segments.</li>
+                        <li><strong>Claims Performance & Settlement Analysis:</strong> Claims are analyzed by settlement status, efficiency, and severity across customer demographics to monitor operational performance.</li>
+                        <li><strong>Risk & Profitability Analysis:</strong> Portfolio and product-level loss ratios, underwriting margins, and risk matrices highlight loss-making products and high-risk policy exposure.</li>   
+                        <li><strong>High-Risk Customer Identification:</strong> High-risk customers are identified through claim-to-premium analysis, enabling underwriting review, fraud monitoring, and operational follow-ups.</li>   
+                    </ul>
+                    <h3>Technical Implementation</h3>
+                    <ul>      
+                        <li><strong>Power BI:</strong> The entire project was developed in Power BI Desktop using imported data, with transformations handled through Power Query and business logic implemented using calculated columns and DAX measures.</li>
+                        <li><strong>Advanced DAX Measures:</strong> Custom DAX measures were created for Loss Ratio, Underwriting Margin, Claim Frequency, and High-Risk Policy %, with context-aware calculations and conditional formatting to support accurate risk analysis.</li>
+                        <li><strong>Visual Design:</strong> The dashboard features a clean, insurance-themed design with consistent risk-based color coding, synchronized high-impact slicers, and a drill-through-ready structure for deeper analysis.</li>
+                        </ul>
+                    <h3>Business Impact</h3>
+                    <ul>
+                        <li><strong>Executive-Level Risk Visibility:</strong> This enables leadership to quickly identify loss-making products and high-risk segments to support strategic portfolio and underwriting decisions.</li>
+                        <li><strong>Profitability & Pricing Insights:</strong> This highlights products with negative underwriting margins and provides clear evidence for pricing and coverage optimization.</li>
+                        <li><strong>Operational Efficiency Monitoring:</strong> This tracks claim settlement performance and pending claim exposure to help teams prioritize high-impact backlogs.</li>
+                        <li><strong>Customer Risk Management:</strong> This identifies high-risk customers with excessive claim exposure, supporting proactive risk mitigation and fraud control.</li>
+                        <li><strong>Data-Driven Decision Making:</strong> This replaces static reports with interactive analytics, enabling stakeholders to explore insights dynamically using slicers.</li>
+                    </ul>
+                </div>
+                <!-- Dashboard Embed Section -->
+                <div class="dashboard-container">
+                    <h3>Interactive Insurance Claim Analysis Dashboard</h3>
+                    <!-- Power BI Dashboard -->
+                    <div class="dashboard-embed">
+                        <iframe title="Insurance_Claim_Analysis" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiMTY3YjZkNmUtNzQ3MS00ZTk1LTlkMzAtZmE4OWRiYWZkZjlmIiwidCI6IjM0YmQ4YmVkLTJhYzEtNDFhZS05ZjA4LTRlMGEzZjExNzA2YyJ9" frameborder="0" allowFullScreen="true"></iframe>
+                </div>
+                </div>
+            </section>
+        </main>
+        <script>
+            // Handle smooth scrolling to projects section when clicking back button
+            document.addEventListener('DOMContentLoaded', function() {
+                const backLink = document.querySelector('.back-link');
+                if (backLink) {
+                    backLink.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        // Navigate to index.html with hash, browser will handle the scroll
+                        window.location.href = 'index.html#projects';
+                    });
+                }
+            });
+        </script>
+    </body>
+    </html>

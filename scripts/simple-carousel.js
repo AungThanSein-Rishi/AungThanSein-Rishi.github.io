@@ -3,7 +3,7 @@
  */
 (function() {
     let currentSlide = 0;
-    let totalSlides = 7;
+    let totalSlides = 8;
     let autoplayInterval = null;
     
     function initCarousel() {
